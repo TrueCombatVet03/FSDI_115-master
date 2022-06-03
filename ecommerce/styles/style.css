@@ -35,6 +35,19 @@ body {
 
 }
 
+.navItem{
+    margin-right: 50px;
+    cursor: pointer;
+    color: black;
+    font-weight: 800;
+}
+
+.navItem a{
+    color: red;
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+}
+
 li a {
     display: inline-block;
     color: black;
