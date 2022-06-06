@@ -10,11 +10,7 @@ body {
 
 /*logo*/
 
-.logoImg {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
+
 
 
 /* TOP MAIN NAV MENU */
@@ -170,7 +166,7 @@ nav {
     margin-right: 50px;
     cursor: pointer;
     color: black;
-    font-weight: 800;
+    font-weight: 600;
 }
 
 /*end of sneaker nav */

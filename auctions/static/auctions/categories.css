@@ -1,0 +1,47 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+/* TOP MAIN NAV MENU */
+.topnav {
+    overflow: hidden;
+    background-color:rgb(159, 188, 209);
+    
+}
+
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: #333;
+    color: white;
+}
+.mainNav{
+    margin-right: auto;
+    margin-left: auto;
+}
+h1{
+    text-align: center;
+}
+.logoImg {
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
