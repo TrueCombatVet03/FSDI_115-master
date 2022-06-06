@@ -1,0 +1,230 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.loggedIn {
+    color: white;
+
+}
+
+/* TOP MAIN NAV MENU */
+.topnav {
+    overflow: hidden;
+    background-color: black;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: #333;
+    color: white;
+}
+
+.mainNav {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+.icons {
+    color: #000;
+}
+
+.logoImg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.heading {
+    text-align: center;
+    font-size: 3rem;
+    padding: 10px;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+.heading span {
+    color: cornflowerblue;
+}
+
+.product .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.product .box-container .box {
+    border: .1rem solid rgba(0, 0, 0, .1);
+    border-radius: .5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: #f5f5f5;
+    flex: 1 1 30rem;
+}
+
+.product .box-container .content {
+    padding: 1.5rem;
+}
+
+.product .box-container .box img {
+    height: 20rem;
+    transform: rotate(-35deg);
+    margin: 8rem 2rem;
+}
+
+.product .box-container .box:hover img {
+    transform: rotate(-35deg) scale(1.2);
+}
+
+.product .box-container .box .icons {
+    display: flex;
+    flex-flow: column;
+    position: absolute;
+    top: .5rem;
+    left: 1rem;
+}
+
+.product .box-container .box .icons a {
+    height: 4.5rem;
+    width: 5rem;
+    line-height: 4.5rem;
+    font-size: 2rem;
+    color: #000;
+    border: .1rem solid #000;
+    border-radius: .5rem;
+    background: #fff;
+    margin-top: .5rem;
+}
+
+.product .box-container .box .icons {
+    display: flex;
+    flex-flow: column;
+    position: absolute;
+    top: .5rem;
+    left: -10rem;
+}
+
+.product .box-container .box:hover .icons {
+    left: 1rem;
+}
+
+.product .box-container .box .icons a:hover {
+    color: orangered;
+    color: #fff;
+}
+
+.product .box-container .box .content h3 {
+    color: #000;
+    font-size: 2.5rem;
+}
+
+.product .box-container .box .content .price {
+    color: #000;
+    font-size: 2.5rem;
+    font-weight: bolder;
+    padding: 1rem 0;
+}
+
+.product .box-container .box .content .price span {
+    color: #000;
+    font-size: 1.5rem;
+    text-decoration: line-through;
+}
+
+.product .box-container .box .content .stars {
+    padding-bottom: 1rem;
+}
+
+.product .box-container .box .content .stars i {
+    font-size: 1.7rem;
+    color: orangered;
+}
+
+footer {
+    display: flex;
+}
+
+.footerLeft {
+    flex: 2;
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+.fMenuTitle {
+    font-size: 16px;
+}
+
+.fList {
+    padding: 0;
+    list-style: none;
+}
+
+.fListItem {
+    margin-bottom: 10px;
+    color: gray;
+    cursor: pointer;
+}
+
+.footerRight {
+    flex: 1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.fInput {
+    padding: 5px;
+}
+
+.fButton {
+    padding: 5px;
+    background-color: black;
+    color: white;
+}
+
+.fIcons {
+    display: flex;
+}
+
+.fIcon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.copyright {
+    font-weight: 300;
+    font-size: 14px;
+}
+
+/* end of footer */

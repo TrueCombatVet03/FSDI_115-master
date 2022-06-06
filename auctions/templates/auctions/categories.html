@@ -1,17 +1,16 @@
 {% load static %}
 
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CATERGORIES</title>
-    <link href="{% static 'static/auctions/categories.css' %}" rel="stylesheet">
+    <title>{% block title %}PRODUCTS{% endblock %}</title>
+    <link href="{% static 'static/auctions/css/styles.css' %}" rel="stylesheet">
+    
+
 </head>
 <style>
-    html {
+html {
     scroll-behavior: smooth;
 }
 
@@ -20,19 +19,21 @@ body {
     padding: 0;
     margin: 0;
 }
+
 .loggedIn {
-    color:white;
+    color: white;
 
 }
+
 /* TOP MAIN NAV MENU */
 .topnav {
     overflow: hidden;
-    background-color:black;
-    color:black;
+    background-color: black;
+    color: black;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
+
 }
 
 .topnav a {
@@ -53,38 +54,213 @@ body {
     background-color: #333;
     color: white;
 }
-.mainNav{
+
+.mainNav {
     margin-right: auto;
     margin-left: auto;
 }
-h1{
+
+h1 {
     text-align: center;
 }
-.logoImg {
-display: block;
-margin-left: auto;
-margin-right: auto;
+
+.icons {
+    color: #000;
 }
+
+.logoImg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.heading {
+    text-align: center;
+    font-size: 3rem;
+    padding: 10px;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+.heading span {
+    color: cornflowerblue;
+}
+
+.product .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.product .box-container .box {
+    border: .1rem solid rgba(0, 0, 0, .1);
+    border-radius: .5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: #f5f5f5;
+    flex: 1 1 30rem;
+}
+
+.product .box-container .content {
+    padding: 1.5rem;
+}
+
+.product .box-container .box img {
+    height: 20rem;
+    transform: rotate(-35deg);
+    margin: 8rem 2rem;
+}
+
+.product .box-container .box:hover img {
+    transform: rotate(-35deg) scale(1.2);
+}
+
+.product .box-container .box .icons {
+    display: flex;
+    flex-flow: column;
+    position: absolute;
+    top: .5rem;
+    left: 1rem;
+}
+
+.product .box-container .box .icons a {
+    height: 4.5rem;
+    width: 5rem;
+    line-height: 4.5rem;
+    font-size: 2rem;
+    color: #000;
+    border: .1rem solid #000;
+    border-radius: .5rem;
+    background: #fff;
+    margin-top: .5rem;
+}
+
+.product .box-container .box .icons {
+    display: flex;
+    flex-flow: column;
+    position: absolute;
+    top: .5rem;
+    left: -10rem;
+}
+
+.product .box-container .box:hover .icons {
+    left: 1rem;
+}
+
+.product .box-container .box .icons a:hover {
+    color: orangered;
+    color: #fff;
+}
+
+.product .box-container .box .content h3 {
+    color: #000;
+    font-size: 2.5rem;
+}
+
+.product .box-container .box .content .price {
+    color: #000;
+    font-size: 2.5rem;
+    font-weight: bolder;
+    padding: 1rem 0;
+}
+
+.product .box-container .box .content .price span {
+    color: #000;
+    font-size: 1.5rem;
+    text-decoration: line-through;
+}
+
+.product .box-container .box .content .stars {
+    padding-bottom: 1rem;
+}
+
+.product .box-container .box .content .stars i {
+    font-size: 1.7rem;
+    color: orangered;
+}
+
+footer {
+    display: flex;
+}
+
+.footerLeft {
+    flex: 2;
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+.fMenuTitle {
+    font-size: 16px;
+}
+
+.fList {
+    padding: 0;
+    list-style: none;
+}
+
+.fListItem {
+    margin-bottom: 10px;
+    color: gray;
+    cursor: pointer;
+}
+
+.footerRight {
+    flex: 1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.fInput {
+    padding: 5px;
+}
+
+.fButton {
+    padding: 5px;
+    background-color: black;
+    color: white;
+}
+
+.fIcons {
+    display: flex;
+}
+
+.fIcon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.copyright {
+    font-weight: 300;
+    font-size: 14px;
+}
+
+/* end of footer */ 
 </style>
+
 <body>
     <img src="static/auctions/media/img/logo-transparent.png" height="150" width="150" class="logoImg">
     <h1>SNEAKERS R US</h1>
 
 
-    
+
     <div class="topnav">
 
         <div class="mainNav">
             <a class="active" href="{% url 'auctions:index' %}">HOME</a>
-            <a href="cart.html">CART</a>
-            <a class="nav-link" href="{% url 'auctions:category_list' %}">CATERGORIES</a>
-        
+
+            <a class="nav-link" href="{% url 'auctions:category_list' %}">PRODUCTS</a>
+
             <a class="nav-link" href="{% url 'auctions:add' %}">ADD ITEMS</a>
             <a class="nav-link" href="{% url 'auctions:watchlist' %}">WATCHLIST</a>
             <a class="nav-link" href="{% url 'auctions:auctions_history' %}">AUCTION HISTORY</a>
         </div>
 
-        
+
 
         {% if user.is_authenticated %}
         <a class="nav-link" href="{% url 'auctions:login' %}">LOGIN</a>
@@ -98,17 +274,188 @@ margin-right: auto;
         </div>
         {% else %}
         <a class="nav-link" href="{% url 'auctions:register' %}">REGISTER</a>
-        {% endif %}   
+        {% endif %}
     </div>
-    <h1>Categories</h1>
+
+    <section class="product" id="product">
+        <h1 class="heading">latest <span>Products</span></h1>
+        <div class="box-container">
+            <div class="box">
+                <div class="icons">
+                    <a href="#" class="fa-solid fa-heart"></a>
+                    <a href="#" class="fa fa-eye"></a>
+                </div>
+                <div class="content">
+                    <img src="static/auctions/media/img/1.jpg" alt="">
+                    <h3>Nike Shoes</h3>
+                    <div class="price">$200 <span>$150</span></div>
+                    <div class="stars">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="icons">
+                    <a href="#" class="fa fa-heart"></a>
+                    <a href="#" class="fa fa-eye"></a>
+                </div>
+                <div class="content">
+                    <img src="static/auctions/media/img/2.jpg" alt="">
+                    <h3>Nike Shoes</h3>
+                    <div class="price">$200 <span>$150</span></div>
+                    <div class="stars">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="icons">
+                    <a href="#" class="fa fa-heart"></a>
+                    <a href="#" class="fa fa-eye"></a>
+                </div>
+                <div class="content">
+                    <img src="static/auctions/media/img/3.jpg" alt="">
+                    <h3>Nike Shoes</h3>
+                    <div class="price">$200 <span>$150</span></div>
+                    <div class="stars">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="icons">
+                    <a href="#" class="fa fa-heart"></a>
+                    <a href="#" class="fa fa-eye"></a>
+                </div>
+                <div class="content">
+                    <img src="static/auctions/media/img/5.jpg" alt="">
+                    <h3>Nike Shoes</h3>
+                    <div class="price">$200 <span>$150</span></div>
+                    <div class="stars">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="icons">
+                    <a href="#" class="fa fa-heart"></a>
+                    <a href="#" class="fa fa-eye"></a>
+                </div>
+                <div class="content">
+                    <img src="static/auctions/media/img/7.png" alt="">
+                    <h3>Nike Shoes</h3>
+                    <div class="price">$200 <span>$150</span></div>
+                    <div class="stars">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="icons">
+                    <a href="#" class="fa fa-heart"></a>
+                    <a href="#" class="fa fa-eye"></a>
+                </div>
+                <div class="content">
+                    <img src="static/auctions/media/img/8.png" alt="">
+                    <h3>Nike Shoes</h3>
+                    <div class="price">$200 <span>$150</span></div>
+                    <div class="stars">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <ul></ul>
     {% for category in categories %}
-        <ul><a href="/category_list/{{category.0}}">{{category.1}}</a></ul>
+    <h1>NEW PRODUCTS</h1>
+    <ul style="text-align: center;"><a href="/category_list/{{category.0}}">{{category.1}}</a></ul>
     {% endfor %}
     </ul>
-    
+    <hr>
+    <footer>
+        <div class="footerLeft">
+            <div class="footerMenu">
+                <h1 class="fMenuTitle">About Us</h1>
+                <ul class="fList">
+                    <li class="fListItem">Company</li>
+                    <li class="fListItem">Contact</li>
+                    <li class="fListItem">Careers</li>
+                    <li class="fListItem">Affiliates</li>
+                    <li class="fListItem">Stores</li>
+                </ul>
+            </div>
+            <div class="footerMenu">
+                <h1 class="fMenuTitle">Useful Links</h1>
+                <ul class="fList">
+                    <li class="fListItem">Support</li>
+                    <li class="fListItem">Refund</li>
+                    <li class="fListItem">FAQ</li>
+                    <li class="fListItem">Feedback</li>
+                    <li class="fListItem">Stories</li>
+                </ul>
+            </div>
+            <div class="footerMenu">
+                <h1 class="fMenuTitle">Products</h1>
+                <ul class="fList">
+                    <li class="fListItem">Air Force</li>
+                    <li class="fListItem">Air Jordan</li>
+                    <li class="fListItem">Blazer</li>
+                    <li class="fListItem">Crater</li>
+                    <li class="fListItem">Hippie</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footerRight">
+            <div class="footerRightMenu">
+                <h1 class="fMenuTitle">Subscribe to our newsletter</h1>
+                <div class="fMail">
+                    <input type="text" placeholder="your@email.com" class="fInput">
+                    <button class="fButton">Join!</button>
+                </div>
+            </div>
+            <div class="footerRightMenu">
+                <h1 class="fMenuTitle">Follow Us</h1>
+                <div class="fIcons">
+                    <img src="static/auctions/media/img/facebook.png" alt="" class="fIcon">
+                    <img src="static/auctions/media/img/twitter.png" alt="" class="fIcon">
+                    <img src="static/auctions/media/img/instagram.png" alt="" class="fIcon">
+                    <img src="static/auctions/media/img/whatsapp.png" alt="" class="fIcon">
+                </div>
+            </div>
+            <div class="footerRightMenu">
+                <span class="copyright">Team 2: FSDI_115 All rights reserved. 2022.</span>
+            </div>
+        </div>
+    </footer>
+
 </body>
+
 </html>
 {% block body %}
-{% endblock  %}
+{% endblock %}

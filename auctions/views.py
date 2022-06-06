@@ -130,6 +130,8 @@ def logout_view(request):
     logout(request)
     return HttpResponseRedirect(reverse("auctions:index"))
 
+def active_listing(request):
+    return render(request, "auctions/active_listing.html")    
 
 def register(request):
     if request.method == "POST":
@@ -359,16 +361,13 @@ def category_list_redirect(request, category):
 
 def category_list(request):
     category_choices = [
-            ('clothing', 'Clothing'),
-            ('toys', 'Toys'),
-            ('electronics', 'Electronics'),
-            ('art','Art')]
+            ('Blazer','Blazer')]
     return render(request, "auctions/categories.html",{
         "categories":category_choices
     })
 
 def add_to_watchlist(request):
-      if request.method == 'POST':        
+    if request.method == 'POST':        
         listing_title = str(request.POST.get("listing_title", False))
         item_ = Item.objects.filter(title=listing_title).get()
         user_ = User.objects.filter(username=request.user.username).get()

@@ -165,9 +165,10 @@ margin-right: auto;
     <div class="topnav">
 
         <div class="mainNav">
-            <a class="active" href="{% url 'auctions:index' %}">HOME</a>
+            <a class="active" href="{% url 'auctions:home' %}">HOME</a>
+            <a href="{% url 'auctions:index'}">Live Auction</a>
             <a href="cart.html">CART</a>
-            <a class="nav-link" href="{% url 'auctions:category_list' %}">CATERGORIES</a>
+            <a class="nav-link" href="{% url 'auctions:category_list' %}">PRODUCTS</a>
         
             <a class="nav-link" href="{% url 'auctions:add' %}">ADD ITEMS</a>
             <a class="nav-link" href="{% url 'auctions:watchlist' %}">WATCHLIST</a>
