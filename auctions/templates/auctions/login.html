@@ -165,9 +165,7 @@ margin-right: auto;
     <div class="topnav">
 
         <div class="mainNav">
-            <a class="active" href="{% url 'auctions:home' %}">HOME</a>
-            <a href="{% url 'auctions:index'}">Live Auction</a>
-            <a href="cart.html">CART</a>
+            <a class="active" href="{% url 'auctions:index' %}">HOME</a>
             <a class="nav-link" href="{% url 'auctions:category_list' %}">PRODUCTS</a>
         
             <a class="nav-link" href="{% url 'auctions:add' %}">ADD ITEMS</a>
@@ -188,7 +186,8 @@ margin-right: auto;
             {% endif %}
         </div>
         {% else %}
-        <a class="nav-link" href="{% url 'auctions:register' %}">REGISTER</a>
+        <a class="nav-link" href="{% url 'auctions:logout' %}">LOGOUT</a>
+        <a class="nav-link" href="{% url 'auctions:register' %}">SIGN-UP</a>
         {% endif %}   
     </div>
     

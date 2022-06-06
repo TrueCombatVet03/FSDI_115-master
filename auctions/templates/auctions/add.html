@@ -7,8 +7,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CATERGORIES</title>
-    <link href="{% static 'static/auctions/categories.css' %}" rel="stylesheet">
+    <title>ADD TO AUCTION</title>
+    
 </head>
 <style>
     html {
@@ -65,6 +65,14 @@ display: block;
 margin-left: auto;
 margin-right: auto;
 }
+.form {
+    width: 400px;
+    height: auto;
+    background: rgb(159, 188, 209);
+    margin: auto;
+    border-radius: 5px;
+    padding: 20px 40px;
+}
 </style>
 <body>
     <img src="static/auctions/media/img/logo-transparent.png" height="150" width="150" class="logoImg">
@@ -76,8 +84,8 @@ margin-right: auto;
 
         <div class="mainNav">
             <a class="active" href="{% url 'auctions:index' %}">HOME</a>
-            <a href="cart.html">CART</a>
-            <a class="nav-link" href="{% url 'auctions:category_list' %}">CATERGORIES</a>
+            
+            <a class="nav-link" href="{% url 'auctions:category_list' %}">PRODUCTS</a>
         
             <a class="nav-link" href="{% url 'auctions:add' %}">ADD ITEMS</a>
             <a class="nav-link" href="{% url 'auctions:watchlist' %}">WATCHLIST</a>
@@ -97,7 +105,8 @@ margin-right: auto;
             {% endif %}
         </div>
         {% else %}
-        <a class="nav-link" href="{% url 'auctions:register' %}">REGISTER</a>
+        <a class="nav-link" href="{% url 'auctions:logout' %}">LOGOUT</a>
+        
         {% endif %}   
     </div>
     <h1>ADD ITEMS TO AUCTION</h1>
@@ -111,7 +120,7 @@ margin-right: auto;
 </body>
 </html>
 {% block body %}
-<form action="{% url 'auctions:add' %}" method="POST">
+<form action="{% url 'auctions:add' %}" method="POST" class="form">
     {% csrf_token %}
     <div class="form-group">
 
