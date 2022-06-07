@@ -3,6 +3,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,193 +13,252 @@
 </head>
 <style>
     html {
-    scroll-behavior: smooth;
-}
+        scroll-behavior: smooth;
+    }
 
-body {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    padding: 0;
-    margin: 0;
-}
+    body {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        padding: 0;
+        margin: 0;
+    }
 
-.loggedIn {
-    color:white;
+    .loggedIn {
+        color: white;
 
-}
-/* TOP MAIN NAV MENU */
-.topnav {
-    overflow: hidden;
-    background-color:black;
-    color:black;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    
-}
+    }
 
-.topnav a {
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-}
+    /* TOP MAIN NAV MENU */
+    .topnav {
+        overflow: hidden;
+        color: black;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
-.topnav a:hover {
-    background-color: #ddd;
-    color: black;
-}
+    }
 
-.topnav a.active {
-    background-color: #333;
-    color: white;
-}
-.mainNav{
-    margin-right: auto;
-    margin-left: auto;
-}
-h1{
-    text-align: center;
-}
-.logoImg {
-display: block;
-margin-left: auto;
-margin-right: auto;
-}
-.form {
-    width: 400px;
-    height: auto;
-    background: rgb(159, 188, 209);
-    margin: auto;
-    border-radius: 5px;
-    padding: 20px 40px;
-}
+    .topnav a {
+        float: left;
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
 
-.top {
-    text-align: center;
-}
+    .topnav a:hover {
+        text-decoration: underline;
+        color: black;
+    }
 
-.active {
-    background: var(--bg-pink);
-    color: white;
-}
+    .mainNav {
+        margin-right: auto;
+        margin-left: auto;
+    }
 
-.unactive {
-    background: var(--white);
-    color: black;
-}
+    h1 {
+        text-align: center;
+    }
 
-.top a {
-    width: 200px;
-    border: 1px solid grey;
-    padding: 15px 75px;
-    text-decoration: none;
-    font-size: 18px;
-    border-radius: 5px;
-    font-weight: 500;
-    margin-left: -5px;
-}
+    .logoImg {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
-.data {
-    text-align: center;
-}
+    .form {
+        width: 400px;
+        height: auto;
+        background: rgb(53, 51, 51);
+        color:white;
+        margin: auto;
+        border-radius: 5px;
+        padding: 20px 40px;
+    }
 
-.inputs {
-    width: 100%;
-    padding: 15px 0px;
-    border: 1px solid grey;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    outline: none;
-    font-size: 18px;
-    text-indent: 10px;
-}
+    .top {
+        text-align: center;
+    }
 
-.forgotpsw {
-    float: left;
-    color: var(--pink);
-    text-decoration: none;
-}
+    .active {
+        background: var(--bg-pink);
+        color: white;
+    }
 
-.submitbtn {
-    width: 100%;
-    padding: 15px 10px;
-    background: var(--bg-pink);
-    color: white;
-    font-size: 20px;
-    outline: none;
-    border-radius: 5px;
-    border: none;
-}
+    .unactive {
+        background: var(--white);
+        color: white;
+    }
 
-.submitbtn:hover {
-    cursor: pointer;
-}
+    .top a {
+        width: 200px;
+        border: 1px solid grey;
+        padding: 15px 75px;
+        text-decoration: none;
+        font-size: 18px;
+        border-radius: 5px;
+        font-weight: 500;
+        margin-left: -5px;
+    }
 
-.footer {
-    text-align: center;
-}
+    .data {
+        text-align: center;
+    }
 
-.signupbtn {
-    color: var(--pink);
-    text-decoration: none;
-    font-size: 18px;
-}
+    .inputs {
+        width: 100%;
+        padding: 15px 0px;
+        border: 1px solid grey;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        outline: none;
+        font-size: 18px;
+        text-indent: 10px;
+    }
 
-#tag {
-    background: black;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    border-radius: 10px;
-    float: right;
-    user-select: none;
-}
+    .forgotpsw {
+        float: left;
+        color: var(--pink);
+        text-decoration: none;
+    }
+
+    .submitbtn {
+        width: 100%;
+        padding: 15px 10px;
+        background: var(--bg-pink);
+        color: white;
+        font-size: 20px;
+        outline: none;
+        border-radius: 5px;
+        border: none;
+    }
+
+    .submitbtn:hover {
+        cursor: pointer;
+    }
+
+    .footer {
+        text-align: center;
+    }
+
+    .signupbtn {
+        color: var(--pink);
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    #tag {
+        background: black;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        border-radius: 10px;
+        float: right;
+        user-select: none;
+    }
+    footer {
+        display: flex;
+    }
+
+    .footerLeft {
+        flex: 2;
+        display: flex;
+        justify-content: space-between;
+        padding: 50px;
+    }
+
+    .fMenuTitle {
+        font-size: 16px;
+    }
+
+    .fList {
+        padding: 0;
+        list-style: none;
+    }
+
+    .fListItem {
+        margin-bottom: 10px;
+        color: gray;
+        cursor: pointer;
+    }
+
+    .footerRight {
+        flex: 1;
+        padding: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .fInput {
+        padding: 5px;
+    }
+
+    .fButton {
+        padding: 5px;
+        background-color: black;
+        color: white;
+    }
+
+    .fIcons {
+        display: flex;
+    }
+
+    .fIcon {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+    }
+
+    .copyright {
+        font-weight: 300;
+        font-size: 14px;
+    }
+
+    /* end of footer */
+
 </style>
+
 <body>
-    <img src="static/auctions/media/img/logo-transparent.png" height="150" width="150" class="logoImg">
-    <h1>SNEAKERS R US</h1>
-
-
-
     <div class="topnav">
+        <img src="static/auctions/media/img/logo-transparent.png" height="100" width="100" class="logoImg">
 
         <div class="mainNav">
             <a class="active" href="{% url 'auctions:index' %}">HOME</a>
             <a class="nav-link" href="{% url 'auctions:category_list' %}">PRODUCTS</a>
-        
-            <a class="nav-link" href="{% url 'auctions:add' %}">ADD ITEMS</a>
-            <a class="nav-link" href="{% url 'auctions:watchlist' %}">WATCHLIST</a>
-            <a class="nav-link" href="{% url 'auctions:auctions_history' %}">AUCTION HISTORY</a>
+            <a class="nav-link" href="{% url 'auctions:cart' %}">CART</a>
         </div>
 
-        
+
 
         {% if user.is_authenticated %}
-        <a class="nav-link" href="{% url 'auctions:login' %}">LOGIN</a>
-        <a class="nav-link" href="{% url 'auctions:logout' %}">LOGOUT</a>
+        <a class="nav-link" href="{% url 'auctions:add' %}">ADD ITEMS</a>
+        <a class="nav-link" href="{% url 'auctions:watchlist' %}">WATCHLIST</a>
+        <a class="nav-link" href="{% url 'auctions:auctions_history' %}">AUCTION HISTORY</a>
+        <a class="nav-link" href="{% url 'auctions:login' %}"><img src="static/auctions/media/img/user.png" height="30" width="30">LOGIN</a>
+        <a class="nav-link" href="{% url 'auctions:logout' %}"><img src="static/auctions/media/img/logout.png" height="30" width="30">LOGOUT</a>
         <div class="loggedIn">
             {% if user.is_authenticated %}
-            Signed in as <strong>{{ user.username }}</strong>.
+            Signed in as <strong>{{ user.username }}</strong>
             {% else %}
             Not signed in.
             {% endif %}
         </div>
         {% else %}
-        <a class="nav-link" href="{% url 'auctions:logout' %}">LOGOUT</a>
-        <a class="nav-link" href="{% url 'auctions:register' %}">SIGN-UP</a>
-        {% endif %}   
+        <a class="nav-link" href="{% url 'auctions:login' %}"><img src="static/auctions/media/img/user.png" width="30" height="30"> LOGIN</a>
+        <a class="nav-link" href="{% url 'auctions:register' %}"><img src="static/auctions/media/img/signup.png" width="30" height="30"> SIGN-UP</a>
+        {% endif %}
     </div>
-    
+
 
     <ul></ul>
     {% for category in categories %}
-        <ul><a href="/category_list/{{category.0}}">{{category.1}}</a></ul>
+    <ul><a href="/category_list/{{category.0}}">{{category.1}}</a></ul>
     {% endfor %}
     </ul>
-    
+
 </body>
+
 </html>
 {% block body %}
 
@@ -207,37 +267,90 @@ margin-right: auto;
 <div>{{ message }}</div>
 {% endif %}
 
-    <form action="{% url 'auctions:login' %}" method="post" class="form">
-        {% csrf_token %}
-        <div class="top">
-            <h1>Login Form</h1>
-            <br>
-            <a href="{% url 'auctions:login' %}" class="active">Login</a>
-            <a href="{% url 'auctions:register' %}" class="unactive">Signup</a>
+<form action="{% url 'auctions:login' %}" method="post" class="form">
+    {% csrf_token %}
+    <div class="top">
+        <h1>Login Form</h1>
+        <br>
+        <a href="{% url 'auctions:login' %}" class="active">Login</a>
+        <a href="{% url 'auctions:register' %}" class="unactive">Signup</a>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="data">
+        <input autofocus class="form-control" type="text" name="username" placeholder="Username">
+    </div>
+    <br>
+    <div class="data">
+        <input class="form-control" type="password" name="password" placeholder="Password">
+    </div>
+    <br>
+    <br>
+    <div class="submitdiv">
+        <input type="submit" value="Login" class="submitbtn">
+    </div>
+    <br>
+    <br>
+    <div class="footer">
+        <p>Not a member? <a href="{% url 'auctions:register' %}" class="signupbtn">Signup now</a></p>
+    </div>
+</form>
+<footer>
+    <div class="footerLeft">
+        <div class="footerMenu">
+            <h1 class="fMenuTitle">About Us</h1>
+            <ul class="fList">
+                <li class="fListItem">Company</li>
+                <li class="fListItem">Contact</li>
+                <li class="fListItem">Careers</li>
+                <li class="fListItem">Affiliates</li>
+                <li class="fListItem">Stores</li>
+            </ul>
         </div>
-        <br>
-        <br>
-        <br>
-        <div class="data">
-            <input autofocus class="form-control" type="text" name="username" placeholder="Username">
+        <div class="footerMenu">
+            <h1 class="fMenuTitle">Useful Links</h1>
+            <ul class="fList">
+                <li class="fListItem">Support</li>
+                <li class="fListItem">Refund</li>
+                <li class="fListItem">FAQ</li>
+                <li class="fListItem">Feedback</li>
+                <li class="fListItem">Stories</li>
+            </ul>
         </div>
-        <div class="data">
-            <input class="form-control" type="password" name="password" placeholder="Password">
+        <div class="footerMenu">
+            <h1 class="fMenuTitle">Products</h1>
+            <ul class="fList">
+                <li class="fListItem">Air Force</li>
+                <li class="fListItem">Air Jordan</li>
+                <li class="fListItem">Blazer</li>
+                <li class="fListItem">Crater</li>
+                <li class="fListItem">Hippie</li>
+            </ul>
         </div>
-        <br>
-        <br>
-        <div class="submitdiv">
-            <input type="submit" value="Login" class="submitbtn">
+    </div>
+    <div class="footerRight">
+        <div class="footerRightMenu">
+            <h1 class="fMenuTitle">Subscribe to our newsletter</h1>
+            <div class="fMail">
+                <input type="text" placeholder="your@email.com" class="fInput">
+                <button class="fButton">Join!</button>
+            </div>
         </div>
-        <br>
-        <br>
-        <div class="footer">
-            <p>Not a member? <a href="{% url 'auctions:register' %}" class="signupbtn">Signup now</a></p>
+        <div class="footerRightMenu">
+            <h1 class="fMenuTitle">Follow Us</h1>
+            <div class="fIcons">
+                <img src="static/auctions/media/img/facebook.png" alt="" class="fIcon">
+                <img src="static/auctions/media/img/twitter.png" alt="" class="fIcon">
+                <img src="static/auctions/media/img/instagram.png" alt="" class="fIcon">
+                <img src="static/auctions/media/img/whatsapp.png" alt="" class="fIcon">
+            </div>
         </div>
-    </form>
+        <div class="footerRightMenu">
+            <span class="copyright">Team 2: FSDI_115 All rights reserved. 2022.</span>
+        </div>
+    </div>
+</footer>
 
 
-{% endblock  %}
-
-
-
+{% endblock %}

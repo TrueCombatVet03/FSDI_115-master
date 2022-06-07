@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>REGISTER</title>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link href="{% static 'static/auctions/categories.css' %}" rel="stylesheet">
 </head>
 <style>
@@ -364,11 +365,13 @@
         <div class="footerRightMenu">
             <h1 class="fMenuTitle">Follow Us</h1>
             <div class="fIcons">
-                <img src="static/auctions/media/img/facebook.png" alt="" class="fIcon">
-                <img src="static/auctions/media/img/twitter.png" alt="" class="fIcon">
-                <img src="static/auctions/media/img/instagram.png" alt="" class="fIcon">
-                <img src="static/auctions/media/img/whatsapp.png" alt="" class="fIcon">
+                <img src=""/>
+                <img src=""/>
+                <img src=""/>
+                <img src="">    
+
             </div>
+            
         </div>
         <div class="footerRightMenu">
             <span class="copyright">Team 2: FSDI_115 All rights reserved. 2022.</span>
@@ -396,7 +399,7 @@
                         <label>Owner: </label>
                         <label id="username_label">{{user.username}}</label>
                     </div>
-                    <div style="">
+                    <div>
                         <label>Current Bid: $</label>
                         <label id="modal_bid"></label>
                     </div>
@@ -454,8 +457,8 @@
 </div>
 
 <script type="text/javascript">
-    var data = {{ json| safe}}
-    var users = {{ json_users| safe}}
+    var data = '{{ json| safe}}'
+    var users = "{{ json_users| safe}}"
     function showAlert(title) {
         console.log("hi");
         console.log(title)

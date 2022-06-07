@@ -26,7 +26,6 @@ body {
 /* TOP MAIN NAV MENU */
 .topnav {
     overflow: hidden;
-    background-color:black;
     color:black;
     display: flex;
     align-items: center;
@@ -36,7 +35,7 @@ body {
 
 .topnav a {
     float: left;
-    color: #f2f2f2;
+    color: black;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -44,14 +43,11 @@ body {
 }
 
 .topnav a:hover {
-    background-color: #ddd;
+    text-decoration: underline;
     color: black;
 }
 
-.topnav a.active {
-    background-color: #333;
-    color: white;
-}
+
 .mainNav{
     margin-right: auto;
     margin-left: auto;
@@ -66,40 +62,35 @@ margin-right: auto;
 }
 </style>
 <body>
-    <img src="static/auctions/media/img/logo-transparent.png" height="150" width="150" class="logoImg">
-    <h1>SNEAKERS R US</h1>
+  <div class="topnav">
+    <img src="static/auctions/media/img/logo-transparent.png" height="100" width="100" class="logoImg">
 
+    <div class="mainNav">
+        <a class="active" href="{% url 'auctions:index' %}">HOME</a>
+        <a class="nav-link" href="{% url 'auctions:category_list' %}">PRODUCTS</a>
+        <a class="nav-link" href="{% url 'auctions:add' %}">ADD ITEMS</a>
+        <a class="nav-link" href="{% url 'auctions:watchlist' %}">WATCHLIST</a>
+        <a class="nav-link" href="{% url 'auctions:auctions_history' %}">AUCTION HISTORY</a>
 
-    
-    <div class="topnav">
-
-        <div class="mainNav">
-            <a class="active" href="{% url 'auctions:index' %}">HOME</a>
-            <a href="cart.html">CART</a>
-            <a class="nav-link" href="{% url 'auctions:category_list' %}">PRODUCTS</a>
-        
-            <a class="nav-link" href="{% url 'auctions:add' %}">ADD ITEMS</a>
-            <a class="nav-link" href="{% url 'auctions:watchlist' %}">WATCHLIST</a>
-            <a class="nav-link" href="{% url 'auctions:auctions_history' %}">AUCTION HISTORY</a>
-        </div>
-
-        
-
-        {% if user.is_authenticated %}
-        <a class="nav-link" href="{% url 'auctions:login' %}">LOGIN</a>
-        <a class="nav-link" href="{% url 'auctions:logout' %}">LOGOUT</a>
-        <div class="loggedIn">
-            {% if user.is_authenticated %}
-            Signed in as <strong>{{ user.username }}</strong>.
-            {% else %}
-            Not signed in.
-            {% endif %}
-        </div>
-        {% else %}
-        <a class="nav-link" href="{% url 'auctions:register' %}">REGISTER</a>
-        {% endif %}   
     </div>
-    
+
+
+
+    {% if user.is_authenticated %}
+    <a class="nav-link" href="{% url 'auctions:login' %}"><img src="static/auctions/media/img/user.png" height="30" width="30">LOGIN</a>
+    <a class="nav-link" href="{% url 'auctions:logout' %}"><img src="static/auctions/media/img/logout.png" height="30" width="30">LOGOUT</a>
+    <div class="loggedIn">
+        {% if user.is_authenticated %}
+        Signed in as <strong>{{ user.username }}</strong>
+        {% else %}
+        Not signed in.
+        {% endif %}
+    </div>
+    {% else %}
+    <a class="nav-link" href="{% url 'auctions:login' %}"><img src="static/auctions/media/img/user.png">LOGIN</a>
+    <a class="nav-link" href="{% url 'auctions:register' %}">SIGN-UP</a>
+    {% endif %}
+</div>
 
     <ul></ul>
     {% for category in categories %}

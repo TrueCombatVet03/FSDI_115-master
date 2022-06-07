@@ -59,6 +59,9 @@ class CommentForm(forms.Form):
             })
         }
 
+def cart(request): 
+    return render(request, 'auctions/cart.html')       
+
 def index(request):
     #Here in the index page we want to display all active auction listings.
     items = utility.get_items()
@@ -178,7 +181,7 @@ def add(request):
             
             #Register a new Item to the db
             new_item = Item(user=request.user, 
-                            title=item_title,
+                            title = item_title,
                             description=item_desc,
                             img_url=item_img_url,
                             starting_bid=item_str_bid,

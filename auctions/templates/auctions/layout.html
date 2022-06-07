@@ -7,41 +7,39 @@
     <title>{% block title %}Auctions{% endblock %}</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="{% static 'static/auctions/styles.css' %}" rel="stylesheet"> 
+    <link href="{% static 'static/auctions/styles.css' %}" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </head>
 
 
+
 <body>
-    <img src="static/auctions/media/img/logo-transparent.png" height="150" width="150" class="logoImg">
-    <h1>SNEAKERS R US</h1>
 
-
-    <div class="loggedIn">
-        {% if user.is_authenticated %}
-        Signed in as <strong>{{ user.username }}</strong>.
-        {% else %}
-        Not signed in.
-        {% endif %}
-    </div>
     <div class="topnav">
-
+        <img src="static/auctions/media/img/logo-transparent.png" height="100" width="100" class="logoImg">
         <div class="mainNav">
             <a class="active" href="{% url 'auctions:index' %}">HOME</a>
             <a class="nav-link" href="{% url 'auctions:category_list' %}">PRODUCTS</a>
-        
-            <a class="nav-link" href="{% url 'auctions:add' %}">ADD ITEMS</a>
-            <a class="nav-link" href="{% url 'auctions:watchlist' %}">WATCHLIST</a>
-            <a class="nav-link" href="{% url 'auctions:auctions_history' %}">AUCTION HISTORY</a>
+            <a class="nav-link" href="{% url 'auctions:cart' %}">CART</a>
         </div>
 
-        
-
         {% if user.is_authenticated %}
-        <a class="nav-link" href="{% url 'auctions:login' %}">LOGIN</a>
-        <a class="nav-link" href="{% url 'auctions:logout' %}">LOGOUT</a>
+        <div id="myNav" class="overlay">
+            <div class="overlay-content">
+                <a class="nav-link" href="{% url 'auctions:add' %}">ADD ITEMS</a>
+                <a class="nav-link" href="{% url 'auctions:watchlist' %}">WATCHLIST</a>
+                <a class="nav-link" href="{% url 'auctions:auctions_history' %}">AUCTION HISTORY</a>
+            </div>
+        </div>
+
+
+        <a class="nav-link" href="{% url 'auctions:login' %}"><img src="static/auctions/media/img/user.png" height="30"
+                width="30">LOGIN</a>
+        <a class="nav-link" href="{% url 'auctions:logout' %}"><img src="static/auctions/media/img/logout.png"
+                height="30" width="30">LOGOUT</a>
+
         <div class="loggedIn">
             {% if user.is_authenticated %}
             Signed in as <strong>{{ user.username }}</strong>
@@ -50,25 +48,27 @@
             {% endif %}
         </div>
         {% else %}
-        <a class="nav-link" href="{% url 'auctions:login' %}">LOGIN</a>
-        <a class="nav-link" href="{% url 'auctions:register' %}">SIGN-UP</a>
-        {% endif %}   
+        <a class="nav-link" href="{% url 'auctions:login' %}"><img src="static/auctions/media/img/user.png" width="30"
+                height="30"> LOGIN</a>
+        <a class="nav-link" href="{% url 'auctions:register' %}"><img src="static/auctions/media/img/signup.png"
+                width="30" height="30"> SIGN-UP</a>
+        {% endif %}
+    </div>
+
+    <div class="header">
+        <img src="static/auctions/media/img/header.jpg" width="80%">
+    </div>
+    <div class="headerContent">
+        <h2>FEATURED STYLES</h2>
+        <h3>SHOP NOW</h3>
     </div>
     <nav id="nav">
         <div class="navBottom">
-            
-            <h3 class="menuItem">AIR FORCE</h3>
-            <h3 class="menuItem">JORDAN</h3> 
-            <h3 class="menuItem">BLAZER</h3>
-            <h3 class="menuItem">CRATER</h3>
-            <h3 class="menuItem">HIPPIE</h3>                     
-            
-            <div class="navItem">
-                <div class="search">
-                    <input type="text" placeholder="Search..." class="searchInput">
-                    <img src="static/auctions/media/img/search.png" width="20" height="20" alt="" class="searchIcon">
-                </div>
-            </div>
+            <h4 class="menuItem">AIR FORCE</h3>
+                <h4 class="menuItem">JORDAN</h3>
+                    <h4 class="menuItem">BLAZER</h3>
+                        <h4 class="menuItem">CRATER</h3>
+                            <h4 class="menuItem">HIPPIE</h3>
         </div>
     </nav>
     <div class="slider">
@@ -179,157 +179,156 @@
                 <input type="text" placeholder="yyyy" class="payInput sm">
                 <input type="text" placeholder="cvv" class="payInput sm">
             </div>
-            <button class="payButton"href="cart.html">Checkout!</button>
+            <button class="payButton" href="cart.html">Checkout!</button>
             <span class="close">X</span>
         </div>
     </div>
-    
-    
+
+
     {% block body %}
-    
+
     {% endblock %}
 
-<script type="text/javascript">
-    const wrapper = document.querySelector(".sliderWrapper");
-const menuItems = document.querySelectorAll(".menuItem");
+    <script type="text/javascript">
+        const wrapper = document.querySelector(".sliderWrapper");
+        const menuItems = document.querySelectorAll(".menuItem");
 
-const products = [
-    {
-        id: 1,
-        title: "Air Force",
-        price: 119,
-        colors: [
+        const products = [
             {
-                code: "black",
-                img: "static/auctions/media/img/air.png",
+                id: 1,
+                title: "Air Force",
+                price: 119,
+                colors: [
+                    {
+                        code: "black",
+                        img: "static/auctions/media/img/air.png",
+                    },
+                    {
+                        code: "darkblue",
+                        img: "static/auctions/media/img/air2.png",
+                    },
+                ],
             },
             {
-                code: "darkblue",
-                img: "static/auctions/media/img/air2.png",
-            },
-        ],
-    },
-    {
-        id: 2,
-        title: "Air Jordan",
-        price: 149,
-        colors: [
-            {
-                code: "lightgray",
-                img: "static/auctions/media/img/jordan.png",
-            },
-            {
-                code: "green",
-                img: "static/auctions/media/img/jordan2.png",
-            },
-        ],
-    },
-    {
-        id: 3,
-        title: "Blazer",
-        price: 109,
-        colors: [
-            {
-                code: "lightgray",
-                img: "static/auctions/media/img/blazer.png",
+                id: 2,
+                title: "Air Jordan",
+                price: 149,
+                colors: [
+                    {
+                        code: "lightgray",
+                        img: "static/auctions/media/img/jordan.png",
+                    },
+                    {
+                        code: "green",
+                        img: "static/auctions/media/img/jordan2.png",
+                    },
+                ],
             },
             {
-                code: "green",
-                img: "static/auctions/media/img/blazer2.png",
-            },
-        ],
-    },
-    {
-        id: 4,
-        title: "Crater",
-        price: 129,
-        colors: [
-            {
-                code: "black",
-                img: "static/auctions/media/img/crater.png",
-            },
-            {
-                code: "lightgray",
-                img: "static/auctions/media/img/crater2.png",
-            },
-        ],
-    },
-    {
-        id: 5,
-        title: "Hippie",
-        price: 99,
-        colors: [
-            {
-                code: "gray",
-                img: "static/auctions/media/img/hippie.png",
+                id: 3,
+                title: "Blazer",
+                price: 109,
+                colors: [
+                    {
+                        code: "lightgray",
+                        img: "static/auctions/media/img/blazer.png",
+                    },
+                    {
+                        code: "green",
+                        img: "static/auctions/media/img/blazer2.png",
+                    },
+                ],
             },
             {
-                code: "black",
-                img: "static/auctions/media/img/hippie2.png",
+                id: 4,
+                title: "Crater",
+                price: 129,
+                colors: [
+                    {
+                        code: "black",
+                        img: "static/auctions/media/img/crater.png",
+                    },
+                    {
+                        code: "lightgray",
+                        img: "static/auctions/media/img/crater2.png",
+                    },
+                ],
             },
-        ],
-    },
-];
+            {
+                id: 5,
+                title: "Hippie",
+                price: 99,
+                colors: [
+                    {
+                        code: "gray",
+                        img: "static/auctions/media/img/hippie.png",
+                    },
+                    {
+                        code: "black",
+                        img: "static/auctions/media/img/hippie2.png",
+                    },
+                ],
+            },
+        ];
 
-let choosenProduct = products[0];
+        let choosenProduct = products[0];
 
-const currentProductImg = document.querySelector(".productImg");
-const currentProductTitle = document.querySelector(".productTitle");
-const currentProductPrice = document.querySelector(".productPrice");
-const currentProductColors = document.querySelectorAll(".color");
-const currentProductSizes = document.querySelectorAll(".size");
+        const currentProductImg = document.querySelector(".productImg");
+        const currentProductTitle = document.querySelector(".productTitle");
+        const currentProductPrice = document.querySelector(".productPrice");
+        const currentProductColors = document.querySelectorAll(".color");
+        const currentProductSizes = document.querySelectorAll(".size");
 
-menuItems.forEach((item, index) => {
-    item.addEventListener("click", () => {
-        //change the current slide
-        wrapper.style.transform = `translateX(${-100 * index}vw)`;
+        menuItems.forEach((item, index) => {
+            item.addEventListener("click", () => {
+                //change the current slide
+                wrapper.style.transform = `translateX(${-100 * index}vw)`;
 
-        //change the choosen product
-        choosenProduct = products[index];
+                //change the choosen product
+                choosenProduct = products[index];
 
-        //change texts of currentProduct
-        currentProductTitle.textContent = choosenProduct.title;
-        currentProductPrice.textContent = "$" + choosenProduct.price;
-        currentProductImg.src = choosenProduct.colors[0].img;
+                //change texts of currentProduct
+                currentProductTitle.textContent = choosenProduct.title;
+                currentProductPrice.textContent = "$" + choosenProduct.price;
+                currentProductImg.src = choosenProduct.colors[0].img;
 
-        //assing new colors
+                //assing new colors
+                currentProductColors.forEach((color, index) => {
+                    color.style.backgroundColor = choosenProduct.colors[index].code;
+                });
+            });
+        });
+
         currentProductColors.forEach((color, index) => {
-            color.style.backgroundColor = choosenProduct.colors[index].code;
+            color.addEventListener("click", () => {
+                currentProductImg.src = choosenProduct.colors[index].img;
+            });
         });
-    });
-});
 
-currentProductColors.forEach((color, index) => {
-    color.addEventListener("click", () => {
-        currentProductImg.src = choosenProduct.colors[index].img;
-    });
-});
-
-currentProductSizes.forEach((size, index) => {
-    size.addEventListener("click", () => {
-        currentProductSizes.forEach((size) => {
-            size.style.backgroundColor = "white";
-            size.style.color = "black";
+        currentProductSizes.forEach((size, index) => {
+            size.addEventListener("click", () => {
+                currentProductSizes.forEach((size) => {
+                    size.style.backgroundColor = "white";
+                    size.style.color = "black";
+                });
+                size.style.backgroundColor = "black";
+                size.style.color = "white";
+            });
         });
-        size.style.backgroundColor = "black";
-        size.style.color = "white";
-    });
-});
 
-const productButton = document.querySelector(".productButton");
-const payment = document.querySelector(".payment");
-const close = document.querySelector(".close");
+        const productButton = document.querySelector(".productButton");
+        const payment = document.querySelector(".payment");
+        const close = document.querySelector(".close");
 
-productButton.addEventListener("click", () => {
-    payment.style.display = "flex";
-});
+        productButton.addEventListener("click", () => {
+            payment.style.display = "flex";
+        });
 
-close.addEventListener("click", () => {
-    payment.style.display = "none";
-});
+        close.addEventListener("click", () => {
+            payment.style.display = "none";
+        });
 
-
-</script>
+    </script>
 </body>
 
 </html>
