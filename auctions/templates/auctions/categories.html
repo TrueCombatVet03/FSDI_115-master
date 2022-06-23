@@ -5,7 +5,7 @@
 
 <head>
     <title>{% block title %}PRODUCTS{% endblock %}</title>
-    <link href="{% static 'static/auctions/css/styles.css' %}" rel="stylesheet">
+    <link href="{% static 'static/auctions/css/categories.css' %}" rel="stylesheet">
 
 
 </head>
@@ -78,7 +78,7 @@
     }
 
     .heading span {
-        color:rgb(156, 41, 41);
+        color: rgb(156, 41, 41);
     }
 
     .product .box-container {
@@ -331,8 +331,10 @@
         <a class="nav-link" href="{% url 'auctions:add' %}">ADD ITEMS</a>
         <a class="nav-link" href="{% url 'auctions:watchlist' %}">WATCHLIST</a>
         <a class="nav-link" href="{% url 'auctions:auctions_history' %}">AUCTION HISTORY</a>
-        <a class="nav-link" href="{% url 'auctions:login' %}"><img src="static/auctions/media/img/user.png" height="30" width="30">LOGIN</a>
-        <a class="nav-link" href="{% url 'auctions:logout' %}"><img src="static/auctions/media/img/logout.png" height="30" width="30">LOGOUT</a>
+        <a class="nav-link" href="{% url 'auctions:login' %}"><img src="static/auctions/media/img/user.png" height="30"
+                width="30">LOGIN</a>
+        <a class="nav-link" href="{% url 'auctions:logout' %}"><img src="static/auctions/media/img/logout.png"
+                height="30" width="30">LOGOUT</a>
         <div class="loggedIn">
             {% if user.is_authenticated %}
             Signed in as <strong>{{ user.username }}</strong>
@@ -341,8 +343,10 @@
             {% endif %}
         </div>
         {% else %}
-        <a class="nav-link" href="{% url 'auctions:login' %}"><img src="static/auctions/media/img/user.png" width="30" height="30"> LOGIN</a>
-        <a class="nav-link" href="{% url 'auctions:register' %}"><img src="static/auctions/media/img/signup.png" width="30" height="30"> SIGN-UP</a>
+        <a class="nav-link" href="{% url 'auctions:login' %}"><img src="static/auctions/media/img/user.png" width="30"
+                height="30"> LOGIN</a>
+        <a class="nav-link" href="{% url 'auctions:register' %}"><img src="static/auctions/media/img/signup.png"
+                width="30" height="30"> SIGN-UP</a>
         {% endif %}
     </div>
 
@@ -352,7 +356,7 @@
             <div class="box">
                 <div class="icons">
                     <a href="{% url 'auctions:watchlist' %}" class="fa-solid fa-heart">❤</a>
-                    
+
                 </div>
                 <div class="content">
                     <img src="static/auctions/media/img/1.jpg" alt="">
@@ -371,7 +375,7 @@
             <div class="box">
                 <div class="icons">
                     <a href="#" class="fa fa-heart">❤</a>
-                    
+
                 </div>
                 <div class="content">
                     <img src="static/auctions/media/img/2.jpg" alt="">
@@ -390,7 +394,7 @@
             <div class="box">
                 <div class="icons">
                     <a href="#" class="fa fa-heart">❤</a>
-                    
+
                 </div>
                 <div class="content">
                     <img src="static/auctions/media/img/3.jpg" alt="">
@@ -409,7 +413,7 @@
             <div class="box">
                 <div class="icons">
                     <a href="#" class="fa fa-heart">❤</a>
-                    
+
                 </div>
                 <div class="content">
                     <img src="static/auctions/media/img/5.jpg" alt="">
@@ -428,7 +432,7 @@
             <div class="box">
                 <div class="icons">
                     <a href="#" class="fa fa-heart">❤</a>
-                    
+
                 </div>
                 <div class="content">
                     <img src="static/auctions/media/img/7.png" alt="">
@@ -447,7 +451,7 @@
             <div class="box">
                 <div class="icons">
                     <a href="#" class="fa fa-heart">❤</a>
-                    
+
                 </div>
                 <div class="content">
                     <img src="static/auctions/media/img/8.png" alt="">
@@ -545,9 +549,9 @@
                     <i class="fa fa-star">⭐</i>
                 </div>
                 <div class="price">$90 <span>$120</span>
+                </div>
+                <a href="{% url 'auctions:cart' %}">Add To Cart</a>
             </div>
-            <a href="{% url 'auctions:cart' %}">Add To Cart</a>
-        </div>
         </div>
     </section>
     {% endfor %}
@@ -608,28 +612,28 @@
             </div>
         </div>
     </footer>
-<script>
-    document.querySelectorAll('.featured-image-1').forEach(image_1 =>{
-    image_1.addEventListener('click', () =>{
-        var src = image_1.getAttribute('src');
-        document.querySelector('.big-image-1').src = src;
-    });
-});
+    <script>
+        document.querySelectorAll('.featured-image-1').forEach(image_1 => {
+            image_1.addEventListener('click', () => {
+                var src = image_1.getAttribute('src');
+                document.querySelector('.big-image-1').src = src;
+            });
+        });
 
-document.querySelectorAll('.featured-image-2').forEach(image_2 =>{
-    image_2.addEventListener('click', () =>{
-        var src = image_2.getAttribute('src');
-        document.querySelector('.big-image-2').src = src;
-    });
-});
+        document.querySelectorAll('.featured-image-2').forEach(image_2 => {
+            image_2.addEventListener('click', () => {
+                var src = image_2.getAttribute('src');
+                document.querySelector('.big-image-2').src = src;
+            });
+        });
 
-document.querySelectorAll('.featured-image-3').forEach(image_3 =>{
-    image_3.addEventListener('click', () =>{
-        var src = image_3.getAttribute('src');
-        document.querySelector('.big-image-3').src = src;
-    });
-});
-</script>
+        document.querySelectorAll('.featured-image-3').forEach(image_3 => {
+            image_3.addEventListener('click', () => {
+                var src = image_3.getAttribute('src');
+                document.querySelector('.big-image-3').src = src;
+            });
+        });
+    </script>
 </body>
 
 </html>

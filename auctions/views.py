@@ -21,10 +21,9 @@ logger = logging.getLogger('mylogger')
 class ItemForm(forms.ModelForm):
     class Meta:
         category_choices = [
-            ('clothing', 'Clothing'),
-            ('toys', 'Toys'),
-            ('electronics', 'Electronics'),
-            ('art','Art')
+            ('blazer', 'Blazer'),
+            ('air force', 'Air Force'),
+            ('crater','Hippie')
         ]
         model = Item
         fields = ['title', 'description', 'img_url', 'starting_bid', 'category']

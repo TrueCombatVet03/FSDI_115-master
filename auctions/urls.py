@@ -5,6 +5,7 @@ from . import views
 app_name = "auctions"
 
 urlpatterns = [
+
     path("", views.index, name="index"),
     path("cart", views.cart, name="cart"),
     path("login", views.login_view, name="login"),
