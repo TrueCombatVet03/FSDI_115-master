@@ -17,9 +17,9 @@
         <div class="nav container">
             <a class="logo" href="{% url 'auctions:index' %}">SNEAKERS R US</a>
 
-            <i class='bx bx-shopping-bag' id="cart-icon"></i>
+            <button onclick="closeFunction()"><i class='bx bx-shopping-bag' id="cart-icon"></i></button>
 
-            <div class="cart">
+            <div class="cart" id="cart">
                 <h2 class="cart-title">Your Cart</h2>
 
                 <div class="cart-content">
@@ -33,7 +33,7 @@
                 <!-- Buy Button -->
                 <button type="button" class="btn-buy">Buy Now</button>
                 <!-- Cart Close -->
-                <i class='bx bx-x' id="close-cart"></i>
+                <button onclick="closeFunction()"><i class='bx bx-x' id="close-cart"></i></button>
             </div>
         </div>
         
@@ -181,6 +181,15 @@
         }
 
         // Making Function
+        function closeFunction() {
+            var x = document.getElementById("cart");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+
         function ready() {
             // Reomve Items From Cart
             var reomveCartButtons = document.getElementsByClassName("cart-remove");
