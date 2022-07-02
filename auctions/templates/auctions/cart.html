@@ -1,4 +1,6 @@
+
 {% load static %}
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,8 +18,15 @@
     <header>
         <div class="nav container">
             <a class="logo" href="{% url 'auctions:index' %}">SNEAKERS R US</a>
+            <img src="static/auctions/media/img/logo-transparent.png" height="100" width="100" class="logoImg">
+            <a class="active" href="{% url 'auctions:index' %}">HOME</a>
+            <a class="nav-link" href="{% url 'auctions:category_list' %}">PRODUCTS</a>
+            <a class="nav-link" href="{% url 'auctions:cart' %}">CART</a>
+
 
             <button onclick="closeFunction()"><i class='bx bx-shopping-bag' id="cart-icon"></i></button>
+
+            
 
             <div class="cart" id="cart">
                 <element onclick="closeFunction()"><i class='bx bx-x' id="close-cart"></i></element>
