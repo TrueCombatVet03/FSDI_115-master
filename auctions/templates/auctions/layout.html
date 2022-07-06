@@ -4,37 +4,35 @@
 <html lang="en">
 
 <head>
-    <title>{% block title %}Auctions{% endblock %}</title>
+    <title>{% block title %}SNEAKERS R US{% endblock %}</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="{% static 'static/auctions/styles.css' %}" rel="stylesheet">
+    <link href="{% static '/auctions/css/styles.css' %}" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </head>
 
 
-
 <body>
+    <img src="static/auctions/media/img/logo-transparent.png" height="150" width="150" class="logoImg">
 
-    <div class="topnav">
-        <img src="static/auctions/media/img/logo-transparent.png" height="100" width="100" class="logoImg">
-        <div class="mainNav">
-            <a class="active" href="{% url 'auctions:index' %}">HOME</a>
-            <a class="nav-link" href="{% url 'auctions:category_list' %}">PRODUCTS</a>
-            <a class="nav-link" href="{% url 'auctions:cart' %}">CART</a>
-        </div>
+    <div class="navbar">
+        <a href="{% url 'auctions:index' %}">HOME</a>
+        <a href="{% url 'auctions:category_list' %}">SNEAKERS</a>
+        <a href="{% url 'auctions:cart' %}">CART</a>
 
         {% if user.is_authenticated %}
-        <div id="myNav" class="overlay">
-            <div class="overlay-content">
-                <a class="nav-link" href="{% url 'auctions:add' %}">ADD ITEMS</a>
-                <a class="nav-link" href="{% url 'auctions:watchlist' %}">WATCHLIST</a>
-                <a class="nav-link" href="{% url 'auctions:auctions_history' %}">AUCTION HISTORY</a>
+
+        <div class="dropdown">
+            <button class="dropbtn">MEMBERS
+            </button>
+            <div class="dropdown-content">
+                <a href="{% url 'auctions:add' %}">ADD ITEMS</a>
+                <a href="{% url 'auctions:watchlist' %}">WATCHLIST</a>
+                <a href="{% url 'auctions:auctions_history' %}">AUCTION HISTORY</a>
             </div>
         </div>
-
-
         <a class="nav-link" href="{% url 'auctions:login' %}"><img src="static/auctions/media/img/user.png" height="30"
                 width="30">LOGIN</a>
         <a class="nav-link" href="{% url 'auctions:logout' %}"><img src="static/auctions/media/img/logout.png"
@@ -54,7 +52,7 @@
                 width="30" height="30"> SIGN-UP</a>
         {% endif %}
     </div>
-
+    
     <div class="header">
         <img src="static/auctions/media/img/header.jpg" width="80%">
     </div>

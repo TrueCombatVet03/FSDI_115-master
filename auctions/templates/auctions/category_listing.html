@@ -13,34 +13,29 @@
 
 
 <body>
-    <img src='static/auctions/media/img/logo-transparent.png' height="150" width="150" class="logoImg">
-    <h1>SNEAKERS R US</h1>
+    <img src="static/auctions/media/img/logo-transparent.png" height="150" width="150" class="logoImg">
 
+    <div class="navbar">
+        <a href="{% url 'auctions:index' %}">HOME</a>
+        <a href="{% url 'auctions:category_list' %}">SNEAKERS</a>
+        <a href="{% url 'auctions:cart' %}">CART</a>
 
-    <div class="loggedIn">
         {% if user.is_authenticated %}
-        Signed in as <strong>{{ user.username }}</strong>.
-        {% else %}
-        Not signed in.
-        {% endif %}
-    </div>
-    <div class="topnav">
 
-        <div class="mainNav">
-            <a class="active" href="{% url 'auctions:index' %}">HOME</a>
-            
-            <a class="nav-link" href="{% url 'auctions:category_list' %}">PRODUCTS</a>
-
-            <a class="nav-link" href="{% url 'auctions:add' %}">ADD ITEMS</a>
-            <a class="nav-link" href="{% url 'auctions:watchlist' %}">WATCHLIST</a>
-            <a class="nav-link" href="{% url 'auctions:auctions_history' %}">AUCTION HISTORY</a>
+        <div class="dropdown">
+            <button class="dropbtn">MEMBERS
+            </button>
+            <div class="dropdown-content">
+                <a href="{% url 'auctions:add' %}">ADD ITEMS</a>
+                <a href="{% url 'auctions:watchlist' %}">WATCHLIST</a>
+                <a href="{% url 'auctions:auctions_history' %}">AUCTION HISTORY</a>
+            </div>
         </div>
+        <a class="nav-link" href="{% url 'auctions:login' %}"><img src="static/auctions/media/img/user.png" height="30"
+                width="30">LOGIN</a>
+        <a class="nav-link" href="{% url 'auctions:logout' %}"><img src="static/auctions/media/img/logout.png"
+                height="30" width="30">LOGOUT</a>
 
-
-
-        {% if user.is_authenticated %}
-        <a class="nav-link" href="{% url 'auctions:login' %}">LOGIN</a>
-        <a class="nav-link" href="{% url 'auctions:logout' %}">LOGOUT</a>
         <div class="loggedIn">
             {% if user.is_authenticated %}
             Signed in as <strong>{{ user.username }}</strong>
@@ -49,7 +44,10 @@
             {% endif %}
         </div>
         {% else %}
-        <a class="nav-link" href="{% url 'auctions:logout' %}">LOGOUT</a>
+        <a class="nav-link" href="{% url 'auctions:login' %}"><img src="static/auctions/media/img/user.png" width="30"
+                height="30"> LOGIN</a>
+        <a class="nav-link" href="{% url 'auctions:register' %}"><img src="static/auctions/media/img/signup.png"
+                width="30" height="30"> SIGN-UP</a>
         {% endif %}
     </div>
     <h1> {{category}}</h1>

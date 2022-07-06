@@ -14,11 +14,10 @@
     <link href="{% static '/auctions/css/cart.css' %}" rel="stylesheet">
 </head>
 
-<body>
+<body> 
     <header>
         <div class="nav container">
-            <a class="logo" href="{% url 'auctions:index' %}">SNEAKERS R US</a>
-            <img src="static/auctions/media/img/logo-transparent.png" height="100" width="100" class="logoImg">
+            <!--<img src="static/auctions/media/img/logo-transparent.png" height="100" width="100" class="logoImg"> -->
             <a class="active" href="{% url 'auctions:index' %}">HOME</a>
             <a class="nav-link" href="{% url 'auctions:category_list' %}">PRODUCTS</a>
             <a class="nav-link" href="{% url 'auctions:cart' %}">CART</a>
@@ -190,6 +189,10 @@
             ready();
         }
 
+        // onload event
+        window.onload = function() {
+            document.getElementById("cart").style.display = "none";
+        };    
         // Making Function
         function closeFunction() {
             var x = document.getElementById("cart");
@@ -307,5 +310,4 @@
         }
     </script>
 </body>
-
 </html>
