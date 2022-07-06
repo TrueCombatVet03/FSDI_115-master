@@ -11,6 +11,7 @@
 </head>
 <style>
     .navbar {
+        display: flex;
         overflow: auto;
         background-color: white;
         font-family: Arial, Helvetica, sans-serif;
@@ -129,7 +130,7 @@
                 <a href="{% url 'auctions:watchlist' %}">WATCHLIST</a>
                 <a href="{% url 'auctions:auctions_history' %}">AUCTION HISTORY</a>
             </div>
-            
+
         </div>
         <a class="nav-link" href="{% url 'auctions:login' %}"><img src="static/auctions/media/img/user.png" height="25"
                 width="25">LOGIN</a>
