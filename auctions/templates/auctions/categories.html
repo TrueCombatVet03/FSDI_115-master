@@ -111,7 +111,7 @@
 </style>
 
 <body>
-    <img src="static/auctions/media/img/logo-transparent.png" height="150" width="150" class="logoImg">
+    <img src="static/auctions/media/img/logo-transparent.png" height="200" width="200" class="logoImg">
 
     <div class="navbar">
         <a href="{% url 'auctions:index' %}">HOME</a>
@@ -123,11 +123,13 @@
         <div class="dropdown">
             <button class="dropbtn">MEMBERS
             </button>
+
             <div class="dropdown-content">
                 <a href="{% url 'auctions:add' %}">ADD ITEMS</a>
                 <a href="{% url 'auctions:watchlist' %}">WATCHLIST</a>
                 <a href="{% url 'auctions:auctions_history' %}">AUCTION HISTORY</a>
             </div>
+            
         </div>
         <a class="nav-link" href="{% url 'auctions:login' %}"><img src="static/auctions/media/img/user.png" height="25"
                 width="25">LOGIN</a>
