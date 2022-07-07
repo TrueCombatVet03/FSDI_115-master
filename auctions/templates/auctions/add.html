@@ -33,10 +33,8 @@
                 <a href="{% url 'auctions:auctions_history' %}">AUCTION HISTORY</a>
             </div>
         </div>
-        <a class="nav-link" href="{% url 'auctions:login' %}"><img src="static/auctions/media/img/user.png" height="30"
-                width="30">LOGIN</a>
-        <a class="nav-link" href="{% url 'auctions:logout' %}"><img src="static/auctions/media/img/logout.png"
-                height="30" width="30">LOGOUT</a>
+        <a class="nav-link" href="{% url 'auctions:login' %}">LOGIN</a>
+        <a class="nav-link" href="{% url 'auctions:logout' %}">LOGOUT</a>
 
         <div class="loggedIn">
             {% if user.is_authenticated %}

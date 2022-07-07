@@ -90,11 +90,7 @@ li a {
 }
 
 li a:hover:not(.active) {
-    background-color: #111;
-}
-
-.active {
-    background-color: #04AA6D;
+    text-decoration: underline;
 }
 
 .logo {
