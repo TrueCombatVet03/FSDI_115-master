@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HELP</title>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link href="{% static '/auctions/css/help.css' %}" rel="stylesheet">
+</head>
+
+
+<body>
+    <img src="static/auctions/media/img/logo-transparent.png" height="150" width="150" class="logoImg">
+    <h1>SNEAKERS R US</h1>
+
+
+
+    <div class="topnav">
+
+        <div class="mainNav">
+            <a class="active" href="{% url 'auctions:index' %}">HOME</a>
+            <a href="cart.html">CART</a>
+            <a class="nav-link" href="{% url 'auctions:category_list' %}">PRODUCTS</a>
+
+            <a class="nav-link" href="{% url 'auctions:add' %}">ADD ITEMS</a>
+            <a class="nav-link" href="{% url 'auctions:watchlist' %}">WATCHLIST</a>
+            <a class="nav-link" href="{% url 'auctions:auctions_history' %}">AUCTION HISTORY</a>
+        </div>
+
+    </div>
+
+    <div class="dropdown">
+        <button class="dropbtn">Dropdown</button>
+        <div class="dropdown-content">
+          <a href="#">How to Auction</a>
+          <a href="#">Returns</a>
+          <a href="#">Refund</a>
+        </div>
+      </div>
+
+
+    <ul></ul>
+    {% for category in categories %}
+    <ul><a href="/category_list/{{category.0}}">{{category.1}}</a></ul>
+    {% endfor %}
+    </ul>
+
+</body>

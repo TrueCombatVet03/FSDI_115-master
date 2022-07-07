@@ -451,4 +451,6 @@ def auctions_history(request):
         return render(request, "auctions/auctions_won.html",{
         "message": message
     })
-    
+
+def help(request): 
+    return render(request, 'auctions/help.html')
