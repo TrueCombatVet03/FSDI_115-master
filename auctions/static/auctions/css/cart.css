@@ -20,6 +20,34 @@
     --bg-color: #fff;
 }
 
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+    background-color: white;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    letter-spacing: 0.1rem;
+    font-weight: 700;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    text-decoration: underline;
+}
+
 img {
     width: 100%;
 }
@@ -59,14 +87,14 @@ header {
 
 .nav {
 
-    color: black;
+    color: rgb(18, 1, 1);
     text-decoration: none;
     padding: 14px 16px;
     font-size: 17px;
 }
 
 .nav a {
-    color: black;
+    color: rgb(22, 21, 21);
 }
 
 ul {
@@ -74,7 +102,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: rgb(186, 185, 185);
 }
 
 li {
@@ -93,8 +121,13 @@ li a:hover:not(.active) {
     background-color: #111;
 }
 
+.fList{
+    background-color: #fff;
+    color:#111;
+}
+
 .active {
-    background-color: #04AA6D;
+    background-color: #0ab97c;
 }
 
 .logo {
@@ -110,11 +143,15 @@ li a:hover:not(.active) {
 }
 
 .active {
-    color: black;
+    color: rgb(28, 28, 28);
 }
 
 .nav-link {
-    color: black;
+    color: rgb(90, 236, 85);
+}
+
+.nav-link a{
+    color: #04AA6D;
 }
 
 .cart {

@@ -40,6 +40,10 @@ body {
     text-decoration: none;
 }
 
+.nav-link{
+    padding-bottom: 10rem;
+}
+
 .dropdown {
     float: left;
     color: black;
@@ -198,6 +202,7 @@ h1:after {
     z-index: 2;
     width: 500px;
     transition: 1s all;
+    padding-top: 20rem;
 }
 
 .stark-form form:hover {
@@ -296,6 +301,7 @@ h1:after {
     overflow: hidden;
     opacity: 0.4;
     z-index: -3;
+    margin-top: 20rem;
 }
 
 #inner-cirlce1 {
