@@ -125,11 +125,15 @@
                                 <input hidden type="text" value="{{item.0.title}}" name="listing_title">
                                 <button href="#" id="myBtn" class="btn btn-primary" type="submit">Open</button>
                             </form>
+                            {% if request.user.is_authenticated %}
                             <form method="POST" action=" {% url 'auctions:index' %} ">
                                 {% csrf_token %}
                                 <input hidden type="text" value="{{item.0.title}}" name="listing_title">
-                                <button href="{% url 'auctions:login' %}" id="myBtn1" class="btn btn-secondary" type="submit">Add to
+
+                                <button href="{% url 'auctions:login' %}" id="myBtn1" class="btn btn-secondary"
+                                    type="submit">Add to
                                     Watchlist</button>
+                            {% endif %}
                                 
                             </form>
                         </div>
