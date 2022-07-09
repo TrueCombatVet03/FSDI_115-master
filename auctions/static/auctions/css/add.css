@@ -26,6 +26,10 @@ body {
 }
 .navbar {
     overflow: hidden;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+    display: flex;
     background-color: white;
     font-family: Arial, Helvetica, sans-serif;
 }

@@ -14,7 +14,6 @@
     <img src="static/auctions/media/img/logo-transparent.png" height="150" width="150" class="logoImg">
     <h1>SNEAKERS R US</h1>
 
-
     
     <div class="topnav">
 
@@ -63,10 +62,10 @@
       <div class="card">
         <img class="card-img-top" height="600px" src="{{item.img_url}}" alt="Card image cap">
         <div class="card-body">
-          <h5 class="card-title">{{item.title}}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">{{owner.username}}</h6>
+          <h5 class="card-title" style="text-align: cente; font-size:30px;">{{item.title}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Member:  {{owner.username}}</h6>
           <div style="height:60px; overflow: auto;">
-            <p class="card-text">{{item.description}}.</p>
+            <p class="card-text">Description: {{item.description}}</p>
           </div>
           <div>
             <form method="POST" action="{% url 'auctions:place_bid' %}">
@@ -92,9 +91,6 @@
             <div class="row">
               <label style="padding-left: 15px; font-size: 20px; font-weight: bold; ">Status</label>
               {% if item.status %}
-              <div
-                style="width: 20px; height: 20px; border-radius: 50%; border: 1px solid; background-color:green; opacity: 0.4; margin-top: 5px; margin-left: 10px;">
-              </div>
               {% else %}
               <div
                 style="width: 20px; height: 20px; border-radius: 50%; border: 1px solid; background-color:red; opacity: 0.4;">
@@ -154,13 +150,10 @@
         <form method="POST" action="{% url 'auctions:add_comment' %}">
           {% csrf_token%}
           <div class="form-group" style="padding-top: 5px;">
-            <label for="commentText">New comment</label>
             <input hidden type="text" value="{{item.title}}" name="listing_title">
             <input hidden type="text" value="{{owner.username}}" name="owner">
             <textarea class="form-control" name="commentText" id="commentText" rows="3"></textarea>
-            <div style="text-align: right ;">
-              <button class="btn btn-secondary" style="text-align: center;">Add Comment</button>
-            </div>
+            <button class="btn btn-secondary" style="text-align: center;">Add Comment</button>
           </div>
         </form>
       </div>

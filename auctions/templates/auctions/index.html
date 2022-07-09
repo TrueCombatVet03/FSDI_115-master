@@ -77,8 +77,6 @@
         color: black;
         font-size: 80px;
     }
-
-    
 </style>
 <div class="container">
     <h2 style="text-align:center">LIVE AUCTION</h2>
@@ -118,6 +116,7 @@
                             {% endif %}
 
                         </div>
+                        
                         <div style="text-align: center;">
                             <!-- <button onclick="showAlert('{{item.title}}');"  href="#" id="myBtn" class="btn btn-primary" data-toggle="modal">Open</button> -->
                             <form method="POST" action=" {% url 'auctions:listing_details' %} ">
@@ -125,12 +124,17 @@
                                 <input hidden type="text" value="{{item.0.title}}" name="listing_title">
                                 <button href="#" id="myBtn" class="btn btn-primary" type="submit">Open</button>
                             </form>
+
+                            {% if request.user.is_authenticated %}
                             <form method="POST" action=" {% url 'auctions:index' %} ">
                                 {% csrf_token %}
                                 <input hidden type="text" value="{{item.0.title}}" name="listing_title">
-                                <button href="{% url 'auctions:login' %}" id="myBtn1" class="btn btn-secondary" type="submit">Add to
-                                    Watchlist</button>
                                 
+                                <button href="{% url 'auctions:login' %}" id="myBtn1" class="btn btn-secondary"
+                                    type="submit">Add to
+                                    Watchlist</button>
+                            {% endif %}       
+
                             </form>
                         </div>
 
@@ -198,7 +202,7 @@
                 <li class="fListItem">Feedback</li>
                 <li class="fListItem">Stories</li>
                 <li class="fListItem"><a href="{% url 'auctions:help' %}">Help</a></li>
-                
+
             </ul>
         </div>
         <div class="footerMenu">
@@ -223,13 +227,13 @@
         <div class="footerRightMenu">
             <h1 class="fMenuTitle">Follow Us</h1>
             <div class="fIcons">
-                <img src=""/>
-                <img src=""/>
-                <img src=""/>
-                <img src="">    
+                <img src="" />
+                <img src="" />
+                <img src="" />
+                <img src="">
 
             </div>
-            
+
         </div>
         <div class="footerRightMenu">
             <span class="copyright">Team 2: FSDI_115 All rights reserved. 2022.</span>
@@ -382,7 +386,7 @@
         };
 
     };
-    
+
 </script>
 
 
