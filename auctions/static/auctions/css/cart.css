@@ -94,7 +94,7 @@ header {
 }
 
 .nav a {
-    color: black;
+    color: rgb(22, 21, 21);
 }
 
 ul {
@@ -118,7 +118,11 @@ li a {
 }
 
 li a:hover:not(.active) {
+<<<<<<< HEAD
     background-color: #111;
+=======
+    background-color:black;
+>>>>>>> 5a68ba6e8a93660e4c980b194d34943f3ae11fd3
     color: white;
 }
 
@@ -145,7 +149,11 @@ li a:hover:not(.active) {
 }
 
 .active {
+<<<<<<< HEAD
     color: white;
+=======
+    color: rgb(28, 28, 28);
+>>>>>>> 5a68ba6e8a93660e4c980b194d34943f3ae11fd3
 }
 
 .nav-link {
@@ -154,10 +162,13 @@ li a:hover:not(.active) {
 
 .nav-link a{
     color: #04AA6D;
+<<<<<<< HEAD
 }
 
 .nav-link a:hover{
     color:white;
+=======
+>>>>>>> 5a68ba6e8a93660e4c980b194d34943f3ae11fd3
 }
 
 .cart {

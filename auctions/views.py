@@ -368,19 +368,7 @@ def category_list(request):
         "categories":category_choices
     })
 
-def add_to_watchlist(request):
-    if request.method == 'POST':        
-        listing_title = str(request.POST.get("listing_title", False))
-        item_ = Item.objects.filter(title=listing_title).get()
-        user_ = User.objects.filter(username=request.user.username).get()
-        #Search for item in watchlist
-        search_item = Watchlist.objects.filter(items=item_, user=user_)
-        if len(search_item)!=0:
-            message="Item added to watchlist"
-            # Watchlist(items=item_, user=user_).save()
-        else:
-            message="Item Has already been added to watchlist"
-        return HttpResponseRedirect(reverse("auctions:index", kwargs={"message":'Hello'}))
+
 
 @login_required
 def place_bid(request):
@@ -451,6 +439,22 @@ def auctions_history(request):
         return render(request, "auctions/auctions_won.html",{
         "message": message
     })
+
+@login_required
+def add_to_watchlist(request):
+    if request.method == 'POST':        
+        listing_title = str(request.POST.get("listing_title", False))
+        item_ = Item.objects.filter(title=listing_title).get()
+        user_ = User.objects.filter(username=request.user.username).get()
+        #Search for item in watchlist
+        search_item = Watchlist.objects.filter(items=item_, user=user_)
+        if len(search_item)!=0:
+            message="Item added to watchlist"
+            # Watchlist(items=item_, user=user_).save()
+        else:
+            message="Item Has already been added to watchlist"
+        return HttpResponseRedirect(reverse("auctions:index", kwargs={"message":'Hello'}))
+
 
 def help(request): 
     return render(request, 'auctions/help.html')

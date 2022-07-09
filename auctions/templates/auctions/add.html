@@ -44,10 +44,9 @@
             {% endif %}
         </div>
         {% else %}
-        <a class="nav-link" href="{% url 'auctions:login' %}"><img src="static/auctions/media/img/user.png" width="30"
-                height="30"> LOGIN</a>
-        <a class="nav-link" href="{% url 'auctions:register' %}"><img src="static/auctions/media/img/signup.png"
-                width="30" height="30"> SIGN-UP</a>
+        <a class="nav-link" href="{% url 'auctions:login' %}"><img src="static/auctions/media/img/user.png" width="10"
+                height="10"> LOGIN</a>
+        <a class="nav-link" href="{% url 'auctions:register' %}"> SIGN-UP</a>
         {% endif %}
     </div>
 
