@@ -69,13 +69,17 @@ section {
 }
 
 header {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     background: var(--bg-color);
     box-shadow: 0 1px 4px hsl(0 4% 15% / 10%);
     z-index: 100;
+}
+
+.topnav-right {
+    float:right;
 }
 
 .container {
@@ -86,10 +90,9 @@ header {
 
 
 .nav {
-
     color: rgb(18, 1, 1);
     text-decoration: none;
-    padding: 14px 16px;
+    padding: 10px 10px;
     font-size: 17px;
 }
 
@@ -102,7 +105,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: rgb(186, 185, 185);
+    background-color: white;
 }
 
 li {
@@ -113,16 +116,13 @@ li a {
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 23px 27px;
     text-decoration: none;
 }
 
 li a:hover:not(.active) {
-<<<<<<< HEAD
     background-color: #111;
-=======
     background-color:black;
->>>>>>> 5a68ba6e8a93660e4c980b194d34943f3ae11fd3
     color: white;
 }
 
@@ -132,7 +132,8 @@ li a:hover:not(.active) {
 }
 
 .active {
-    background-color: #0ab97c;
+    background-color: var(--main-color);
+    border: 2px solid;
 }
 
 .logo {
@@ -149,11 +150,8 @@ li a:hover:not(.active) {
 }
 
 .active {
-<<<<<<< HEAD
     color: white;
-=======
     color: rgb(28, 28, 28);
->>>>>>> 5a68ba6e8a93660e4c980b194d34943f3ae11fd3
 }
 
 .nav-link {
@@ -162,13 +160,10 @@ li a:hover:not(.active) {
 
 .nav-link a{
     color: #04AA6D;
-<<<<<<< HEAD
 }
 
 .nav-link a:hover{
     color:white;
-=======
->>>>>>> 5a68ba6e8a93660e4c980b194d34943f3ae11fd3
 }
 
 .cart {
@@ -187,8 +182,6 @@ li a:hover:not(.active) {
     font-size: 1.8rem;
     cursor: pointer;
 }
-
-
 
 .cart.active {
     right: 0;
@@ -280,6 +273,10 @@ li a:hover:not(.active) {
 .btn-buy:hover {
     background: var(--text-color);
 }
+.cart-icon {
+    background-color: var(--main-color);
+    padding: 20px 18px;
+}
 
 #close-cart {
     position: absolute;
@@ -292,7 +289,7 @@ li a:hover:not(.active) {
 
 
 .shop {
-    margin-top: 2rem;
+    margin-top: 4rem;
 }
 
 .shop-content {

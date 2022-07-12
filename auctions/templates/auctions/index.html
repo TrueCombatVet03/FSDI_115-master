@@ -72,19 +72,9 @@
     <link rel="stylesheet" href="{%  static  'auctions/styles.css' %  %}" />
 
 </head>
-<style>
-    h2 {
-        color: black;
-        font-size: 80px;
-    }
-<<<<<<< HEAD
-=======
 
-    
->>>>>>> 5a68ba6e8a93660e4c980b194d34943f3ae11fd3
-</style>
 <div class="container">
-    <h2 style="text-align:center">LIVE AUCTION</h2>
+    <h2 style="text-align:center; font-size:4rem; padding:15px;">LIVE AUCTION</h2>
     {%if message %}
     <p>{{message}}</p>
     {%endif%}
@@ -94,8 +84,8 @@
         <div class="row">
             {% for item in items_bids %}
             {% if item.0.status %}
-            <div class="col-lg-4">
-                <div class="card" style="width: 18rem;">
+            <div class="col-lg-4" style="border: 2px solid black; border-radius: 12px;">
+                <div class="card" style="width: 21rem;">
                     <img class="card-img-top" src="{{item.0.img_url}}" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">
@@ -112,7 +102,7 @@
                             </span>
                         </p>
 
-                        <div style="flex-direction: row; " class="flexbox-container">
+                        <div style="flex-direction: row; border-style: inset; text-align: center;" class="flexbox-container">
                             <label style="font-size: 20px; font-weight: bold; padding-right: 10px;">Bid</label>
                             {% if item.1 %}
                             <label style="font-size: 35px; ">${{item.1}}</label>
@@ -121,40 +111,23 @@
                             {% endif %}
 
                         </div>
-<<<<<<< HEAD
-                        
-=======
->>>>>>> 5a68ba6e8a93660e4c980b194d34943f3ae11fd3
                         <div style="text-align: center;">
                             <!-- <button onclick="showAlert('{{item.title}}');"  href="#" id="myBtn" class="btn btn-primary" data-toggle="modal">Open</button> -->
                             <form method="POST" action=" {% url 'auctions:listing_details' %} ">
                                 {% csrf_token %}
                                 <input hidden type="text" value="{{item.0.title}}" name="listing_title">
-                                <button href="#" id="myBtn" class="btn btn-primary" type="submit">Open</button>
+                                <button href="#" id="myBtn" class="btn btn-dark" type="submit">Open</button>
                             </form>
-<<<<<<< HEAD
-
-=======
->>>>>>> 5a68ba6e8a93660e4c980b194d34943f3ae11fd3
                             {% if request.user.is_authenticated %}
                             <form method="POST" action=" {% url 'auctions:index' %} ">
                                 {% csrf_token %}
                                 <input hidden type="text" value="{{item.0.title}}" name="listing_title">
-<<<<<<< HEAD
-                                
-                                <button href="{% url 'auctions:login' %}" id="myBtn1" class="btn btn-secondary"
-                                    type="submit">Add to
-                                    Watchlist</button>
-                            {% endif %}       
-
-=======
 
                                 <button href="{% url 'auctions:login' %}" id="myBtn1" class="btn btn-secondary"
                                     type="submit">Add to
                                     Watchlist</button>
-                            {% endif %}
-                                
->>>>>>> 5a68ba6e8a93660e4c980b194d34943f3ae11fd3
+                                {% endif %}
+
                             </form>
                         </div>
 
@@ -222,11 +195,6 @@
                 <li class="fListItem">Feedback</li>
                 <li class="fListItem">Stories</li>
                 <li class="fListItem"><a href="{% url 'auctions:help' %}">Help</a></li>
-<<<<<<< HEAD
-
-=======
-                
->>>>>>> 5a68ba6e8a93660e4c980b194d34943f3ae11fd3
             </ul>
         </div>
         <div class="footerMenu">
@@ -251,7 +219,6 @@
         <div class="footerRightMenu">
             <h1 class="fMenuTitle">Follow Us</h1>
             <div class="fIcons">
-<<<<<<< HEAD
                 <img src="" />
                 <img src="" />
                 <img src="" />
@@ -259,19 +226,18 @@
 
             </div>
 
-=======
-                <img src=""/>
-                <img src=""/>
-                <img src=""/>
-                <img src="">    
+            <img src="" />
+            <img src="" />
+            <img src="" />
+            <img src="">
 
-            </div>
-            
->>>>>>> 5a68ba6e8a93660e4c980b194d34943f3ae11fd3
         </div>
-        <div class="footerRightMenu">
-            <span class="copyright">Team 2: FSDI_115 All rights reserved. 2022.</span>
-        </div>
+
+        
+    </div>
+    <div class="footerRightMenu">
+        <span class="copyright">Team 2: FSDI_115 All rights reserved. 2022.</span>
+    </div>
     </div>
 </footer>
 {% else %}
@@ -315,10 +281,10 @@
                                 <ul class="media-date text-uppercase reviews ">
                                     <li>22</li>
                                     <li>09</li>
-                                    <li>2014</li>
+                                    <li>2022</li>
                                 </ul>
                                 <p class="media-comment">
-                                    Great job Alejo, Keep it up!
+                                    Great job, Keep it up!
                                 </p>
 
                             </div>
@@ -420,11 +386,8 @@
         };
 
     };
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> 5a68ba6e8a93660e4c980b194d34943f3ae11fd3
+
 </script>
 
 

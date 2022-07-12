@@ -11,49 +11,39 @@
 </head>
 
 <body>
-  <img src="static/auctions/media/img/logo-transparent.png" height="150" width="150" class="logoImg">
+  <header>
+    <div class="nav container">
+        <a class="logo" href="{% url 'auctions:index' %}"><img src="static/auctions/media/img/logo-transparent.png" height="150" width="150" class="logoImg"></a>
+        <div class="topnav-right">
+            <a class="nav-link-login" href="{% url 'auctions:login' %}">LOGIN</a>
+            <a class="nav-link-logout" href="{% url 'auctions:logout' %}">LOGOUT</a>
 
-  <div class="navbar">
-    <a href="{% url 'auctions:index' %}">HOME</a>
-    <a href="{% url 'auctions:category_list' %}">SNEAKERS</a>
-    <a href="{% url 'auctions:cart' %}">CART</a>
+        </div>
 
-    {% if user.is_authenticated %}
+        <ul>
+            <li><a class="active" href="{% url 'auctions:index' %}">HOME</a></li>
+            <li><a class="nav-link" href="{% url 'auctions:category_list' %}">SNEAKERS</a></li>
+            <li><a class="nav-link" href="{% url 'auctions:cart' %}">CART</a></li>
 
-    <div class="dropdown">
-      <button class="dropbtn">MEMBERS
-      </button>
-      <div class="dropdown-content">
-        <a href="{% url 'auctions:add' %}">ADD ITEMS</a>
-        <a href="{% url 'auctions:watchlist' %}">WATCHLIST</a>
-        <a href="{% url 'auctions:auctions_history' %}">AUCTION HISTORY</a>
-      </div>
+            {% if user.is_authenticated %}
+
+            <li><a class="nav-link" href="{% url 'auctions:add' %}">ADD ITEMS TO AUCTION</a></li>
+            <li><a class="nav-link" href="{% url 'auctions:watchlist' %}">WATCHLIST</a></li>
+            <li><a class="nav-link" href="{% url 'auctions:auctions_history' %}">AUCTION HISTORY</a></li>
+
+
+            {% endif %}
+        </ul>
     </div>
-    <a class="nav-link" href="{% url 'auctions:login' %}"><img src="static/auctions/media/img/user.png" height="30"
-        width="30">LOGIN</a>
-    <a class="nav-link" href="{% url 'auctions:logout' %}"><img src="static/auctions/media/img/logout.png" height="30"
-        width="30">LOGOUT</a>
 
-    <div class="loggedIn">
-      {% if user.is_authenticated %}
-      Signed in as <strong>{{ user.username }}</strong>
-      {% else %}
-      Not signed in.
-      {% endif %}
-    </div>
-    {% else %}
-    <a class="nav-link" href="{% url 'auctions:login' %}"><img src="static/auctions/media/img/user.png" width="30"
-        height="30"> LOGIN</a>
-    <a class="nav-link" href="{% url 'auctions:register' %}"><img src="static/auctions/media/img/signup.png" width="30"
-        height="30"> SIGN-UP</a>
-    {% endif %}
-  </div>
+</header>
 
-  <ul></ul>
+  
   {% for category in categories %}
-  <ul><a href="/category_list/{{category.0}}">{{category.1}}</a></ul>
+  
+    <a href="/category_list/{{category.0}}">{{category.1}}</a>
   {% endfor %}
-  </ul>
+  
 
 </body>
 
@@ -102,6 +92,61 @@
 {% else %}
 <h4>No auctions</h4>
 {% endif %}
+<footer>
+  <div class="footerLeft">
+      <div class="footerMenu">
+          <h1 class="fMenuTitle">About Us</h1>
+          <ul class="fList">
+              <li class="fListItem">Company</li>
+              <li class="fListItem">Contact</li>
+              <li class="fListItem">Careers</li>
+              <li class="fListItem">Affiliates</li>
+              <li class="fListItem">Stores</li>
+          </ul>
+      </div>
+      <div class="footerMenu">
+          <h1 class="fMenuTitle">Useful Links</h1>
+          <ul class="fList">
+              <li class="fListItem">Support</li>
+              <li class="fListItem">Refund</li>
+              <li class="fListItem">FAQ</li>
+              <li class="fListItem">Feedback</li>
+              <li class="fListItem">Stories</li>
+          </ul>
+      </div>
+      <div class="footerMenu">
+          <h1 class="fMenuTitle">Products</h1>
+          <ul class="fList">
+              <li class="fListItem">Air Force</li>
+              <li class="fListItem">Air Jordan</li>
+              <li class="fListItem">Blazer</li>
+              <li class="fListItem">Crater</li>
+              <li class="fListItem">Hippie</li>
+          </ul>
+      </div>
+  </div>
+  <div class="footerRight">
+      <div class="footerRightMenu">
+          <h1 class="fMenuTitle">Subscribe to our newsletter</h1>
+          <div class="fMail">
+              <input type="text" placeholder="your@email.com" class="fInput">
+              <button class="fButton">Join!</button>
+          </div>
+      </div>
+      <div class="footerRightMenu">
+          <h1 class="fMenuTitle">Follow Us</h1>
+          <div class="fIcons">
+              <img src="static/auctions/media/img/facebook.png" alt="" class="fIcon">
+              <img src="static/auctions/media/img/twitter.png" alt="" class="fIcon">
+              <img src="static/auctions/media/img/instagram.png" alt="" class="fIcon">
+              <img src="static/auctions/media/img/whatsapp.png" alt="" class="fIcon">
+          </div>
+      </div>
+      <div class="footerRightMenu">
+          <span class="copyright">Team 2: FSDI_115 All rights reserved. 2022.</span>
+      </div>
+  </div>
+</footer>
 
 
 {% endblock %}

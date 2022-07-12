@@ -19,77 +19,116 @@ body {
     padding: 0;
     margin: 0;
 }
-
+:root {
+    --main-color: #fd4646;
+    --text-color: #171427;
+    --bg-color: #fff;
+}
+/* beginning of nav section */
 .loggedIn {
     color: black;
+    font-size: 10px;
 
 }
-.navbar {
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
     overflow: hidden;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    position: relative;
-    display: flex;
     background-color: white;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
-.navbar a {
+li {
     float: left;
-    font-size: 18px;
-    color: black;
+}
+
+li a {
+    display: block;
+    color: white;
+    letter-spacing: 0.1rem;
     font-weight: 700;
     text-align: center;
-    padding: 10px 14px;
+    padding: 14px 16px;
     text-decoration: none;
 }
 
-.nav-link{
-    padding-bottom: 10rem;
-}
-
-.dropdown {
-    float: left;
-    color: black;
-    overflow: hidden;
-    font-weight: 700;
-}
-
-.dropdown .dropbtn {
-    font-size: 16px;
-    font-weight: 700;
-    border: none;
-    outline: none;
-    color: black;
-    padding: 14px 16px;
-    background-color: inherit;
-    font: inherit;
-    margin: 0;
-}
-
-.navbar a:hover,
-.dropdown:hover .dropbtn {
+li a:hover:not(.active) {
     text-decoration: underline;
 }
 
-.dropdown-content {
-    display: none;
+header {
     position: relative;
-    background-color: #f9f9f9;
-    width: 100%;
+    top: 0;
     left: 0;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+    width: 100%;
+    background: var(--bg-color);
+    box-shadow: 0 1px 4px hsl(0 4% 15% / 10%);
+    z-index: 100;
 }
 
-.dropdown-content .header {
-    padding: 16px;
+.topnav-right {
+    float:right;
+}
+
+.container {
+    max-width: 1068px;
+    margin: auto;
+    width: 100%;
+}
+
+
+.nav {
+    color: rgb(18, 1, 1);
+    text-decoration: none;
+    padding: 10px 10px;
+    font-size: 17px;
+}
+
+.nav a {
+    color: rgb(22, 21, 21);
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(186, 185, 185);
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 23px 27px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+    background-color:black;
     color: white;
 }
-
-.dropdown:hover .dropdown-content {
-    display: block;
+.active {
+    background-color: var(--main-color);
+    border: 2px solid;
 }
+.logo {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+/* end of nav section */
+
 
 
 .column {
@@ -155,7 +194,7 @@ h1 {
     font-size: 48px;
     font-size: 4.8rem;
     font-weight: bold;
-    position: absolute;
+    position: relative;
     text-shadow: 0 0 10px #000, 0 0 20px #000, 0 0 30px #000, 0 0 40px #000,
         0 0 50px #000, 0 0 60px #000, 0 0 70px #000;
     top: 50px;
@@ -187,6 +226,10 @@ h1:after {
 }
 
 /* login form */
+.add-form{
+    justify-content: center;
+
+}
 #fade-box {
     animation: input-entry 3s ease-in;
     z-index: 4;
@@ -200,10 +243,9 @@ h1:after {
     box-shadow: 0 0 15px #000000;
     border-radius: 5px;
     display: inline-block;
-    height: 220px;
-    margin: 200px auto 0;
-    position: relative;
-    z-index: 2;
+    height: 200px;
+    position: absolute;
+    z-index: 1;
     width: 500px;
     transition: 1s all;
     padding-top: 20rem;
@@ -299,7 +341,7 @@ h1:after {
     height: 500px;
     width: 500px;
     position: absolute;
-    top: 20px;
+    top: 40px;
     left: 50%;
     margin-top: 20rem;
     margin-left: -250px;
@@ -491,63 +533,3 @@ h1:after {
     }
 }
 
-footer {
-    display: flex;
-}
-
-.footerLeft {
-    flex: 2;
-    display: flex;
-    justify-content: space-between;
-    padding: 50px;
-}
-
-.fMenuTitle {
-    font-size: 16px;
-}
-
-.fList {
-    padding: 0;
-    list-style: none;
-}
-
-.fListItem {
-    margin-bottom: 10px;
-    color: gray;
-    cursor: pointer;
-}
-
-.footerRight {
-    flex: 1;
-    padding: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.fInput {
-    padding: 5px;
-}
-
-.fButton {
-    padding: 5px;
-    background-color: black;
-    color: white;
-}
-
-.fIcons {
-    display: flex;
-}
-
-.fIcon {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-}
-
-.copyright {
-    font-weight: 300;
-    font-size: 14px;
-}
-
-/* end of footer */

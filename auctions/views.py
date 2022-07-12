@@ -189,9 +189,6 @@ def add(request):
                 new_item.save()
                 message = "Item successfully added to the db"
 
-                #If the item was added successfully, then create a category with that item after making
-                #sure it has not already been added.
-                # Category.objects.filter(item=new_item)
                 item_category = ItemCategory(name=item_cat, item=new_item)
                 item_category.save()
 

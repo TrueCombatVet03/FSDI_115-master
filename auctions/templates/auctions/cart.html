@@ -11,30 +11,41 @@
     <title>CART</title>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link href="{% static '/auctions/css/cart.css' %}" rel="stylesheet">
-<<<<<<< HEAD
-</head> 
-=======
 </head>
-<style>
 
-</style>
->>>>>>> 5a68ba6e8a93660e4c980b194d34943f3ae11fd3
 
 <body>
     <header>
         <div class="nav container">
             <a class="logo" href="{% url 'auctions:index' %}">SNEAKERS R US</a>
+            <div class="topnav-right">
+                <a class="nav-link-login" href="{% url 'auctions:login' %}">LOGIN</a>
+                <a class="nav-link-logout" href="{% url 'auctions:logout' %}">LOGOUT</a>
 
-<<<<<<< HEAD
+            </div>
 
-=======
->>>>>>> 5a68ba6e8a93660e4c980b194d34943f3ae11fd3
+            
+            
+
+
             <ul>
                 <li><a class="active" href="{% url 'auctions:index' %}">HOME</a></li>
                 <li><a class="nav-link" href="{% url 'auctions:category_list' %}">SNEAKERS</a></li>
                 <li><a class="nav-link" href="{% url 'auctions:cart' %}">CART</a></li>
-                <li style="float:right"><button onclick="closeFunction()"><i class='bx bx-shopping-bag'
-                            id="cart-icon"></i></button></li>
+
+                {% if user.is_authenticated %}
+
+                <li><a class="nav-link" href="{% url 'auctions:add' %}">ADD ITEMS</a></li>
+                <li><a class="nav-link" href="{% url 'auctions:watchlist' %}">WATCHLIST</a></li>
+                <li><a class="nav-link" href="{% url 'auctions:auctions_history' %}">AUCTION HISTORY</a></li>
+
+
+                {% endif %}
+
+
+
+                <li style="float:right"><button onclick="closeFunction()" class="cart-icon"><i
+                            class='bx bx-shopping-bag' id="cart-icon"></i></button></li>
             </ul>
             <div class="cart" id="cart">
                 <element onclick="closeFunction()"><i class='bx bx-x' id="close-cart"></i></element>
