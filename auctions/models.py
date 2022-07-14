@@ -12,7 +12,6 @@ class Item(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="item_list")
     title = models.CharField(max_length=64)
     description = models.CharField(max_length=256, blank=True)
-    img_url = models.CharField(max_length=256, blank=True)
     starting_bid = models.DecimalField(decimal_places=2, max_digits=8)
     category = models.CharField(max_length=24, default='No Category')
     status = models.BooleanField(default=True)
