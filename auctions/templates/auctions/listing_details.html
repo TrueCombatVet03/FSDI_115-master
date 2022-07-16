@@ -6,50 +6,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>REGISTER</title>
-    <link href="{% static '/auctions/css/categories.css' %}" rel="stylesheet">
+    <title>LISTING DETAILS</title>
+    <link href="{% static '/auctions/css/listing_details.css' %}" rel="stylesheet">
 </head>
 
 <body>
-  <img src="static/auctions/media/img/logo-transparent.png" height="200" width="200" class="logoImg">
+  <header>
+    <div class="nav container">
+        <a class="logo" href="{% url 'auctions:index' %}"><img src="static/auctions/media/img/logo-transparent.png" height="150" width="150" class="logoImg"></a>
+        <div class="topnav-right">
+            <a class="nav-link-login" href="{% url 'auctions:login' %}">LOGIN</a>
+            <a class="nav-link-logout" href="{% url 'auctions:logout' %}">LOGOUT</a>
 
-  <div class="navbar">
-      <a href="{% url 'auctions:index' %}">HOME</a>
-      <a href="{% url 'auctions:category_list' %}">SNEAKERS</a>
-      <a href="{% url 'auctions:cart' %}">CART</a>
+        </div>
 
-      {% if user.is_authenticated %}
+        <ul>
+            <li><a class="active" href="{% url 'auctions:index' %}">HOME</a></li>
+            <li><a class="nav-link" href="{% url 'auctions:category_list' %}">SNEAKERS</a></li>
+            <li><a class="nav-link" href="{% url 'auctions:cart' %}">CART</a></li>
 
-      <div class="dropdown">
-          <button class="dropbtn">MEMBERS
-          </button>
+            {% if user.is_authenticated %}
 
-          <div class="dropdown-content">
-              <a href="{% url 'auctions:add' %}">ADD ITEMS</a>
-              <a href="{% url 'auctions:watchlist' %}">WATCHLIST</a>
-              <a href="{% url 'auctions:auctions_history' %}">AUCTION HISTORY</a>
-          </div>
+            <li><a class="nav-link" href="{% url 'auctions:add' %}">ADD ITEMS TO AUCTION</a></li>
+            <li><a class="nav-link" href="{% url 'auctions:watchlist' %}">WATCHLIST</a></li>
+            <li><a class="nav-link" href="{% url 'auctions:auctions_history' %}">AUCTION HISTORY</a></li>
 
-      </div>
-      <a class="nav-link" href="{% url 'auctions:login' %}"><img src="static/auctions/media/img/user.png" height="25"
-              width="25">LOGIN</a>
-      <a class="nav-link" href="{% url 'auctions:logout' %}"><img src="static/auctions/media/img/logout.png"
-              height="25" width="25">LOGOUT</a>
-      <div class="loggedIn">
-          {% if user.is_authenticated %}
-          Signed in as <strong>{{ user.username }}</strong>
-          {% else %}
-          Not signed in.
-          {% endif %}
-      </div>
-      {% else %}
-      <a class="nav-link" href="{% url 'auctions:login' %}"><img src="static/auctions/media/img/user.png" width="30"
-              height="30"> LOGIN</a>
-      <a class="nav-link" href="{% url 'auctions:register' %}"><img src="static/auctions/media/img/signup.png"
-              width="30" height="30"> SIGN-UP</a>
-      {% endif %}
-  </div>
-    
+
+            {% endif %}
+        </ul>
+    </div>
+
+</header>
 
     <ul></ul>
     {% for category in categories %}

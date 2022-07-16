@@ -15,10 +15,10 @@
 
 
 <body>
+
     <header>
         <div class="nav container">
-            <a class="logo" href="{% url 'auctions:index' %}"><img src="static/auctions/media/img/logo-transparent.png"
-                    height="150" width="150" class="logoImg"></a>
+            <a class="logo" href="{% url 'auctions:index' %}"><img src="static/auctions/media/img/logo-transparent.png" height="150" width="150" class="logoImg"></a>
             <div class="topnav-right">
                 <a class="nav-link-login" href="{% url 'auctions:login' %}">LOGIN</a>
                 <a class="nav-link-logout" href="{% url 'auctions:logout' %}">LOGOUT</a>
@@ -42,85 +42,101 @@
         </div>
 
     </header>
+    </div>
 
     <ul></ul>
     {% for category in categories %}
     <ul><a href="/category_list/{{category.0}}">{{category.1}}</a></ul>
     {% endfor %}
     </ul>
-    
+
 </body>
 
 </html>
 {% block body %}
-<div class="form-title" style="text-align: center; font-size: 35px;">ADD TO AUCTION</div>
-<div class="form-body" style="display:flex; justify-content: center; align-items: center; padding:20px;">
-    <form action="{% url 'auctions:add' %}" method="POST" class="form" style="display:grid; place-items: center; background-color:#171427; color:#fd4646; font-size:18px; width:50%; padding: 25px; border-radius:5px;">
-        {% csrf_token %}
-        {{ new_form }}
-        
-        <input style="width: 50%; padding:14px 20px; border-radius: 4px;" type="submit" class="submit-button"></input>
-        
-    </form>
+<div style="margin-left:25%; padding:1px 16px; height: 1000px;">
+    <div id="logo">
+        <h1><i> ADD TO AUCTION </i></h1>
+    </div>
+    <section class="stark-form">
+        <form action="{% url 'auctions:add' %}" method="POST" class="form">
+            <div id="fade-box">
+                {% csrf_token %}
+                {{ new_form }}
+                <button style="margin-top: 10px;" type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+        <div class="hexagons">
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <br>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <br>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+
+            <br>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <br>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+            <span>&#x2B22;</span>
+        </div>
+    </section>
+    <div id="circle1">
+        <div id="inner-cirlce1">
+            <h2> </h2>
+        </div>
+    </div>
 </div>
-
-
-
-<footer>
-    <div class="footerLeft">
-        <div class="footerMenu">
-            <h1 class="fMenuTitle">About Us</h1>
-            <ul class="fList">
-                <li class="fListItem">Company</li>
-                <li class="fListItem">Contact</li>
-                <li class="fListItem">Careers</li>
-                <li class="fListItem">Affiliates</li>
-                <li class="fListItem">Stores</li>
-            </ul>
-        </div>
-        <div class="footerMenu">
-            <h1 class="fMenuTitle">Useful Links</h1>
-            <ul class="fList">
-                <li class="fListItem">Support</li>
-                <li class="fListItem">Refund</li>
-                <li class="fListItem">FAQ</li>
-                <li class="fListItem">Feedback</li>
-                <li class="fListItem">Stories</li>
-            </ul>
-        </div>
-        <div class="footerMenu">
-            <h1 class="fMenuTitle">Products</h1>
-            <ul class="fList">
-                <li class="fListItem">Air Force</li>
-                <li class="fListItem">Air Jordan</li>
-                <li class="fListItem">Blazer</li>
-                <li class="fListItem">Crater</li>
-                <li class="fListItem">Hippie</li>
-            </ul>
-        </div>
-    </div>
-    <div class="footerRight">
-        <div class="footerRightMenu">
-            <h1 class="fMenuTitle">Subscribe to our newsletter</h1>
-            <div class="fMail">
-                <input type="text" placeholder="your@email.com" class="fInput">
-                <button class="fButton">Join!</button>
-            </div>
-        </div>
-        <div class="footerRightMenu">
-            <h1 class="fMenuTitle">Follow Us</h1>
-            <div class="fIcons">
-                <img src="static/auctions/media/img/facebook.png" alt="" class="fIcon">
-                <img src="static/auctions/media/img/twitter.png" alt="" class="fIcon">
-                <img src="static/auctions/media/img/instagram.png" alt="" class="fIcon">
-                <img src="static/auctions/media/img/whatsapp.png" alt="" class="fIcon">
-            </div>
-        </div>
-        <div class="footerRightMenu">
-            <span class="copyright">Team 2: FSDI_115 All rights reserved. 2022.</span>
-        </div>
-    </div>
-</footer>
-
 
 {% endblock %}
