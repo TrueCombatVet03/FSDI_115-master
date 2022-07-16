@@ -26,7 +26,7 @@ class ItemForm(forms.ModelForm):
         ]
         
         model = Item
-        fields = ['title', 'description', 'starting_bid', 'category']
+        fields = ['title', 'description', 'img_url', 'starting_bid', 'category']
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control',
                                             'id': 'item_title',
@@ -34,6 +34,9 @@ class ItemForm(forms.ModelForm):
             'description': forms.TextInput(attrs={'class': 'form-control',
                                             'id': 'item_description',
                                             'placeholder': 'Item Description'}),
+            'img_url': forms.TextInput(attrs={'class': 'form-control',
+                                            'id': 'item_img_url',
+                                            'placeholder': 'Image URL'}),
             'starting_bid': forms.NumberInput(attrs={'class': 'form-control',
                                             'id': 'item_starting_bid',
                                             'placeholder': 'Initial Bid'}),   
@@ -171,6 +174,7 @@ def add(request):
         if add_item_form.is_valid():
             item_title = add_item_form['title'].value()
             item_desc = add_item_form['description'].value()
+            item_img_url = add_item_form['img_url'].value()
             item_str_bid = add_item_form['starting_bid'].value()
             item_cat = add_item_form['category'].value()
             
@@ -178,6 +182,7 @@ def add(request):
             new_item = Item(user=request.user, 
                             title = item_title,
                             description=item_desc,
+                            img_url=item_img_url,
                             starting_bid=item_str_bid,
                             category=item_cat)
             if new_item != None:
