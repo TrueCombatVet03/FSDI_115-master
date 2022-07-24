@@ -25,6 +25,16 @@ SECRET_KEY = '6ps8j!crjgrxt34cqbqn7x&b3y%(fny8k8nh21+qa)%ws3fh!q'
 
 CSRF_TRUSTED_ORIGINS = ['https://sneakersrus.herokuapp.com/login','https://sneakersrus.herokuapp.com/']
 
+INSTALLED_APPS = [ 
+'corsheaders',  
+]
+
+MIDDLEWARE = [
+'django.middleware.security.SecurityMiddleware',
+'django.middleware.clickjacking.XFrameOptionsMiddleware',
+'corsheaders.middleware.CorsMiddleware',
+]
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
