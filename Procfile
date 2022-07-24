@@ -1,1 +1,1 @@
-web: gunicorn FSDI_115-MASTER.wsgi
+web: gunicorn app:app
