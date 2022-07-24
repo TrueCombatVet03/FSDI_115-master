@@ -29,6 +29,10 @@ INSTALLED_APPS = [
 'corsheaders',  
 ]
 
+CORS_ORIGIN_WHITELIST = (
+'https://sneakersrus.herokuapp.com/',
+)
+
 MIDDLEWARE = [
 'django.middleware.security.SecurityMiddleware',
 'django.middleware.clickjacking.XFrameOptionsMiddleware',
