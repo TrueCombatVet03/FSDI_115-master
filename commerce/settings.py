@@ -25,8 +25,17 @@ SECRET_KEY = '6ps8j!crjgrxt34cqbqn7x&b3y%(fny8k8nh21+qa)%ws3fh!q'
 
 CSRF_TRUSTED_ORIGINS = ['https://sneakersrus.herokuapp.com/login','https://sneakersrus.herokuapp.com/']
 
+INSTALLED_APPS = [ 
+'corsheaders',  
+]
+
+CORS_ORIGIN_WHITELIST = (
+'https://sneakersrus.herokuapp.com/','https://sneakersrus.herokuapp.com/login'
+)
+
+
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [ 'sneakersrus.herokuapp.com','127.0.0.1']
 
