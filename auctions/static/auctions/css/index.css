@@ -102,6 +102,14 @@ body {
     clear: both;
 }
 
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
 
 h1 {
     text-align: center;
@@ -202,12 +210,3 @@ h1 {
     float: right;
     user-select: none;
 }
-
-/* responsive */
-@media screen and (max-width: 600px) {
-    .column {
-        width: 100%;
-        height: auto;
-    }
-}
-
